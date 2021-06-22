@@ -1,0 +1,40 @@
+.video-player {
+  position: relative;
+  height: 100%;
+
+  .video-js {
+    height: 100%;
+
+    .vjs-big-play-button {
+      width: 70px;
+      height: 70px !important;
+      margin-top: -35px !important;
+      margin-left: -35px;
+      border-radius: 50%;
+    }
+
+    .vjs-control-bar {
+      font-size: 12px;
+
+      .vjs-current-time {
+        display: none;
+      }
+
+      .vjs-time-control {
+        display: none;
+      }
+
+      .vjs-duration {
+        display: none;
+      }
+    }
+
+    .vjs-poster {
+      background-size: 100%;
+    }
+  }
+
+  &.vjs-custom-skin>.video-js .vjs-control {
+    width: 2.5em;
+  }
+}

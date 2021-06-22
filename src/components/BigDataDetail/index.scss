@@ -1,0 +1,36 @@
+.bigDataDetail-dialog {
+  .scroll {
+    height: 500px;
+
+    .search-box {
+      margin-bottom: 20px;
+    }
+
+    .table-box {
+      margin-right: 10px;
+    }
+
+    .pagination-box {
+      margin-top: 20px;
+    }
+
+    >.el-scrollbar {
+      height: 100%;
+
+      .el-scrollbar__wrap {
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+
+      .el-scrollbar__bar {
+        &.is-vertical {
+          width: 4px; // 滚动条宽度
+        }
+      }
+
+      .el-scrollbar__thumb {
+        background-color: #4c79eb; // 可设置滚动条颜色
+      }
+    }
+  }
+}

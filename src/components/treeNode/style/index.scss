@@ -1,0 +1,74 @@
+.treenode-container {
+  width: 100%;
+
+  .el-tree {
+    color: #97c1ff;
+    background: transparent;
+
+    &.el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content {
+      background-color: rgba(255, 255, 255, 0.07);
+    }
+
+    .el-tree-node__expand-icon:not(.is-leaf) {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      background: url(../images/expand-icon.png)-13px 0 no-repeat;
+      transform: none;
+
+      &.expanded {
+        background: url(../images/expand-icon.png)0 0 no-repeat;
+      }
+    }
+
+    .el-icon-caret-right:before {
+      content: ''
+    }
+
+    .el-tree__empty-block {
+      .el-tree__empty-text {
+        color: #97c1ff;
+      }
+    }
+
+    .el-tree-node {
+      .el-tree-node__content {
+        .custom-tree-node {
+          .el-tree-icon {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin: 0 5px;
+            vertical-align: middle;
+
+            &.el-folder-icon {
+              background: url(../images/tree-icon.png) -16px 0 no-repeat;
+            }
+
+            &.el-folder-opened-icon {
+              background: url(../images/tree-icon.png) 0 0 no-repeat;
+            }
+
+            &.el-document-icon {
+              background: url(../images/tree-icon.png) -31px 0 no-repeat;
+            }
+          }
+
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .el-tree-node__content:hover {
+        background-color: rgba(255, 255, 255, 0.07);
+      }
+
+      .el-tree-node__children {}
+    }
+
+    .el-tree-node:focus>.el-tree-node__content {
+      background-color: rgba(255, 255, 255, 0.07);
+    }
+  }
+}

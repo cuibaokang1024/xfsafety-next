@@ -1,0 +1,1245 @@
+.home {
+  width: 100%;
+  height: 100%;
+  background: #001646;
+
+  &.company {
+    >.main {
+      display: grid;
+      grid-template-columns: 28.5% auto 31.5%;
+      grid-template-rows: 297px 278px 250px;
+      grid-row-gap: 6px;
+      grid-column-gap: 10px;
+      grid-template-areas:
+        'a b c'
+        'd e f'
+        'g h i';
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      padding: 4px 18px;
+
+      .item {
+        height: 100%;
+        padding: 10px;
+        background: rgba(31, 37, 105, .75);
+
+        &.item-status {
+          padding: 0;
+          background: transparent;
+        }
+
+        .container {
+          position: relative;
+          width: 100%;
+
+          >.el-button {
+            margin-right: 5px;
+            padding: 7px 21px;
+            border: 1px solid #009fcd;
+            background: #009fcd;
+
+            span {
+              font-size: 12px;
+              font-weight: bold;
+              color: #fff;
+            }
+          }
+
+          /* 新闻公告 */
+          &.newsnotice {
+            .more {
+              position: absolute;
+              top: 10px;
+              right: 0px;
+              font-size: 12px;
+              color: #415e9d;
+              cursor: pointer;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+
+            .el-tabs {
+              .el-tabs__header {
+                .el-tabs__nav-wrap {
+                  .el-tabs__nav-scroll {
+                    .el-tabs__nav {
+                      .el-tabs__active-bar {
+                        display: none;
+                      }
+
+                      .el-tabs__item {
+                        width: 80px;
+                        height: 25px;
+                        font-size: 16px;
+                        color: #fff;
+                        text-align: center;
+                        line-height: 25px;
+                        padding: 0;
+                        margin: 0 3px;
+                        background: url(../image/news-tab-static.png) 0 0 no-repeat;
+
+                        &.is-active {
+                          color: #fff;
+                          background: url(../image/news-tab-active.png) 0 0 no-repeat;
+                        }
+                      }
+                    }
+                  }
+                }
+
+                .el-tabs__nav-wrap::after {
+                  display: none;
+                }
+              }
+
+              .el-tabs__content {
+                .news-swiper {
+                  float: left;
+                  width: 50%;
+                  height: 240px;
+
+                  .el-carousel {
+                    .el-carousel__indicators {
+                      width: 40%;
+                      left: 70%;
+                      transform: translateX(0%);
+                      z-index: 999;
+
+                      .el-carousel__indicator {
+                        padding: 10px 4px;
+
+                        .el-carousel__button {
+                          width: 10px;
+                        }
+
+                        &.is-active {
+                          .el-carousel__button {
+                            width: 16px;
+                            background: #00ffff;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                .news-news {
+                  float: right;
+                  width: 48%;
+                  height: 240px;
+                  overflow: hidden;
+                }
+
+                .notice-list {
+                  position: relative;
+                  width: 100%;
+                  height: 240px;
+                  overflow: hidden;
+
+                  .notice-list-no {
+                    position: absolute;
+                    top: 42%;
+                    left: 42%;
+                    color: #97c1ff;
+                  }
+                }
+              }
+            }
+          }
+
+          /* 新闻公告 */
+          /* 组织架构与待办事项 */
+          &.structuredanger {
+            width: 100%;
+
+            .structure {
+              width: 100%;
+              height: 304px;
+              overflow: hidden;
+              background: rgba(31, 37, 105, .75);
+
+              .head {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                height: 30px;
+                padding-left: 10px;
+                padding-top: 14px;
+
+                .icon {
+                  width: 6px;
+                  height: 13px;
+                  margin: 0 6px 3px 2px;
+                  background: url(../image/icon-index.jpg) 0 0 no-repeat;
+                }
+
+                .text {
+                  color: #fff;
+                  font-size: 16px;
+                }
+              }
+
+              .structure-chart {
+                width: 100%;
+                height: 274px;
+                overflow: hidden;
+
+                .block {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  width: 100%;
+                  height: 100%;
+
+                  .block-text {
+                    color: #97c1ff;
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                  }
+
+                  .block-btn {
+                    border: 1px solid #2d3b91;
+                    background: #2d3b91;
+
+                    span {
+                      color: #97c1ff;
+                      font-size: 15px;
+                    }
+                  }
+                }
+              }
+            }
+
+            .danger {
+              width: 100%;
+              height: 278px;
+              background: rgba(31, 37, 105, .75);
+
+              .head {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                height: 39px;
+                padding-left: 10px;
+                background: rgba(255, 255, 255, .07);
+
+                .icon {
+                  width: 6px;
+                  height: 13px;
+                  margin: 0 6px 3px 2px;
+                  background: url(../image/icon-index.jpg) 0 0 no-repeat;
+                }
+
+                .text {
+                  color: #fff;
+                  font-size: 16px;
+                }
+              }
+
+              .timeline {
+                width: 100%;
+                height: 220px;
+                padding: 10px 10px;
+
+                .el-timeline {
+                  height: 220px;
+                  overflow-y: scroll;
+
+                  .loading-text {
+                    height: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                    color: #97c1ff;
+                    font-size: 14px;
+                  }
+
+                  .el-timeline-item {
+                    padding-right: 7px;
+                    padding-bottom: 11px;
+
+                    .el-timeline-item__tail {
+                      display: block;
+                      border-left: 2px solid rgba(57, 63, 144, .55);
+                    }
+
+                    .el-timeline-item__node {
+                      width: 8px;
+                      height: 8px;
+                      left: 1px;
+                      top: 19px;
+                      border: 1px solid #49bae4;
+                    }
+
+                    .el-timeline-item__wrapper {
+                      width: calc(100% - 20px);
+                      height: 51px;
+                      padding: 6px 10px;
+                      margin-left: 20px;
+                      border-radius: 10px;
+                      background: rgba(163, 209, 255, .08);
+                      cursor: pointer;
+
+                      .el-timeline-item__content {
+                        height: 100%;
+
+                        .line-container {
+                          display: flex;
+                          justify-content: flex-start;
+                          align-items: center;
+                          height: 100%;
+
+                          span {
+                            font-size: 14px;
+                            color: #97c1ff;
+                          }
+
+                          .time {
+                            display: flex;
+                            flex-direction: column;
+                          }
+
+                          .text {
+                            width: 30%;
+                            margin-left: 32px;
+
+                            .tool-text {
+                              display: flex;
+                              justify-content: flex-start;
+                              align-items: center;
+
+                              .tool-container {
+                                position: relative;
+
+                                .tooltip {
+                                  position: absolute;
+                                  width: 44px;
+                                  height: 18px;
+                                  top: -13px;
+                                  right: -47px;
+                                  padding-left: 4px;
+                                  text-align: center;
+                                  line-height: 17px;
+                                  border-radius: 5px;
+                                  overflow: hidden;
+
+                                  span {
+                                    font-size: 12px;
+                                    color: #fff;
+                                  }
+
+                                  &.unread {
+                                    background: url(../image/tooltip.png) 0 0 no-repeat;
+                                  }
+
+                                  &.read {
+                                    background: url(../image/tooltip.png) -48px 0 no-repeat;
+                                  }
+                                }
+                              }
+                            }
+                          }
+
+                          .mess {
+                            width: 50%;
+                            font-size: 14px;
+                            color: #97c1ff;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                          }
+                        }
+
+                        .el-timeline-item__timestamp {
+                          display: none;
+                        }
+                      }
+                    }
+                  }
+
+                  .el-timeline-item:last-child {
+                    padding-bottom: 0px;
+                  }
+                }
+              }
+
+              .bg-cover {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+
+                .bg-cover-img {
+                  width: 170px;
+                  height: 142px;
+                  background: url(../components/StructureDanger/image/bg.png) no-repeat;
+                  background-size: 100%;
+                }
+              }
+            }
+          }
+
+          /* 组织架构与待办事项 */
+          /* 隐患值守 */
+          &.todolist {
+            position: relative;
+            height: 100%;
+            flex-direction: column;
+
+            .head {
+              display: flex;
+              height: 20px;
+              justify-content: flex-start;
+              align-items: flex-end;
+              margin-bottom: 10px;
+
+              .icon {
+                width: 6px;
+                height: 13px;
+                margin: 0 6px 3px 2px;
+                background: url(../image/icon-index.jpg) 0 0 no-repeat;
+              }
+
+              .text {
+                color: #fff;
+                font-size: 16px;
+              }
+            }
+
+            .center {
+              width: 100%;
+              height: 250px;
+
+              .top {
+                position: absolute;
+                top: -7px;
+                right: -9px;
+                display: flex;
+                justify-content: flex-end;
+                margin: 6px 0px;
+
+                .el-select {
+                  margin-right: 10px;
+
+                  .el-input {
+                    .el-input__inner {
+                      width: 140px;
+                      height: 22px;
+                      color: #97c1ff;
+                      border: 1px solid #393f90;
+                      background-color: transparent;
+                      border-radius: 0px;
+                    }
+
+                    .el-input__suffix {
+                      height: 22px;
+                      right: 0px;
+                      border-left: 1px solid #393f90;
+
+                      .el-input__icon {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .bot {
+                width: 100%;
+                height: 100%;
+
+                .el-table {
+                  .has-gutter {
+                    background: rgba(1, 128, 288, .14);
+                  }
+
+                  .start-view {
+                    margin-left: 10px;
+
+                    span {
+                      cursor: pointer;
+                    }
+                  }
+
+                  .camera-plan {
+                    display: flex;
+                    margin-left: 10px;
+
+                    .camera {
+                      width: 16px;
+                      height: 16px;
+                      background: url(../image/icon-camera.png) 0 0 no-repeat;
+                      cursor: pointer;
+                    }
+
+                    .plan {
+                      margin-left: 10px;
+                      width: 16px;
+                      height: 16px;
+                      background: url(../image/icon-picture.png) 0 0 no-repeat;
+                      cursor: pointer;
+                    }
+                  }
+
+                  .rectification {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+              }
+            }
+
+            .dialogview {
+              width: 100%;
+
+              .dialog-content {
+
+                .el-form {
+                  display: flex;
+                  flex-wrap: wrap;
+                  padding: 10px;
+                  background: rgba(255, 255, 255, .07);
+
+                  .el-form-item {
+                    flex: 0 1 50%;
+
+                    .el-form-item__content {
+                      width: calc(100% - 64px);
+
+                      .el-textarea__inner {
+                        height: 120px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          /* 隐患值守 */
+          /* 巡查检查 */
+          &.inspection {
+            .head {
+              display: flex;
+              height: 25px;
+              justify-content: flex-start;
+              align-items: flex-end;
+
+              .icon {
+                width: 6px;
+                height: 13px;
+                margin: 0 6px 3px 2px;
+                background: url(../image/icon-index.jpg) 0 0 no-repeat;
+              }
+
+              .text {
+                color: #fff;
+                font-size: 16px;
+              }
+            }
+
+            .content {
+              width: 100%;
+              height: 232px;
+
+              .fire-list {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 60px;
+
+                .fire-item {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  width: 49.5%;
+                  height: 47px;
+                  padding: 0 10px;
+                  background: #101551;
+                  border: 1px solid #252b7b;
+
+                  .left {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    .icon {
+                      width: 26px;
+                      height: 26px;
+                      margin-right: 10px;
+
+                      &.fire-1 {
+                        background: url(../image/fire-1.png) 0 0 no-repeat;
+                      }
+
+                      &.fire-2 {
+                        background: url(../image/fire-2.png) 0 0 no-repeat;
+                      }
+                    }
+
+                    .text {
+                      font-size: 14px;
+                      color: #97c1ff;
+                    }
+                  }
+
+                  .right {
+                    .num {
+                      font-weight: bold;
+                      font-size: 14px;
+                      color: #f0ff00;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+
+              .fire-table {
+                .title {
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 0 2px 8px 4px;
+
+                  span {
+                    font-size: 14px;
+                    color: #aeff00;
+                    cursor: pointer;
+                  }
+
+                  span:hover {
+                    text-decoration: underline;
+                  }
+                }
+
+
+
+                .el-table {
+                  .has-gutter {
+                    background: rgba(1, 128, 288, .14);
+                  }
+                }
+              }
+            }
+
+            .unChk-dialog{
+              .dialog-content {
+                height: 540px;
+
+                .unChk-content{
+                  margin-right: 10px;
+
+                  .table-box{
+                    margin-bottom: 10px;
+                  }
+
+                  .pagination-box {
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 100%;
+                  }
+                }
+        
+                >.el-scrollbar {
+                  height: 100%;
+        
+                  .el-scrollbar__wrap {
+                    overflow-x: hidden;
+                    overflow-y: scroll;
+                  }
+        
+                  .el-scrollbar__bar {
+                    &.is-vertical {
+                      width: 4px; // 滚动条宽度
+                    }
+                  }
+        
+                  .el-scrollbar__thumb {
+                    background-color: #4c79eb; // 可设置滚动条颜色
+                  }
+                }
+              }
+            }
+          }
+
+          /* 巡查检查 */
+          /* 学习成绩 */
+          &.academicrecord {
+
+            .head {
+              display: flex;
+              height: 25px;
+              justify-content: flex-start;
+              align-items: flex-end;
+
+              .icon {
+                width: 6px;
+                height: 13px;
+                margin: 0 6px 3px 2px;
+                background: url(../image/icon-index.jpg) 0 0 no-repeat;
+              }
+
+              .text {
+                color: #fff;
+                font-size: 16px;
+              }
+            }
+
+            .academic {
+              float: left;
+              padding: 10px;
+              width: 36%;
+              height: 278px;
+              background: rgba(31, 37, 105, .75);
+
+              .academic-cover {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                color: #97c1ff;
+              }
+
+              .center {
+                position: relative;
+                width: 100%;
+                height: 233px;
+
+                .cover-text {
+                  position: absolute;
+                  display: flex;
+                  flex-direction: column;
+                  width: 100%;
+                  height: 60px;
+                  left: 0;
+                  bottom: 0;
+                  text-align: center;
+                  line-height: 30px;
+
+                  span,
+                  b {
+                    font-size: 14px;
+                    color: #97c1ff;
+                    font-weight: normal;
+                  }
+                }
+              }
+            }
+
+            .record {
+              position: relative;
+              float: right;
+              padding: 10px;
+              width: 62%;
+              height: 278px;
+              background: rgba(31, 37, 105, .75);
+
+              .more {
+                position: absolute;
+                top: 18px;
+                right: 12px;
+                font-size: 12px;
+                color: #415e9d;
+                cursor: pointer;
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+
+              .center {
+                width: 100%;
+                height: 210px;
+                margin-top: 16px;
+
+                .left {
+                  width: 55%;
+                  height: 100%;
+                  float: left;
+
+                  .video-container {
+                    width: 100%;
+                    height: 210px;
+                    background: skyblue;
+                  }
+                }
+
+                .right {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  width: 42%;
+                  height: 100%;
+                  float: right;
+
+                  .item-record {
+                    width: 100%;
+                    height: 65px;
+                    text-align: center;
+                    line-height: 65px;
+                    cursor: pointer;
+
+                    &.formulation {
+                      background: #0098af;
+
+                      &:hover {
+                        background: #008397;
+                      }
+                    }
+
+                    &.employee {
+                      background: #1572e5;
+
+                      &:hover {
+                        background: #005dd0;
+                      }
+                    }
+
+                    &.testpaper {
+                      background: #9522ba;
+
+                      &:hover {
+                        background: #7d02a5;
+                      }
+                    }
+
+                    span {
+                      color: #fff;
+                      font-size: 14px;
+                    }
+                  }
+                }
+              }
+            }
+
+            .dialogview {
+              width: 100%;
+
+              .dialog-content {
+                height: 410px;
+                overflow-y: scroll;
+
+                .dialog-sroll {
+                  height: 100%;
+                  padding-right: 10px;
+
+                  .risk-container {
+                    width: 100%;
+                    min-height: 156px;
+                    margin-bottom: 16px;
+                    border-radius: 10px;
+                    overflow: hidden;
+
+                    .risk-header {
+                      display: flex;
+                      justify-content: flex-start;
+                      align-items: center;
+                      width: 100%;
+                      height: 36px;
+                      background: #516281;
+
+                      .title {
+                        padding-left: 20px;
+
+                        span {
+                          color: #fff;
+                          font-size: 14px;
+                        }
+                      }
+                    }
+
+                    .risk-content {
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: space-between;
+                      width: 100%;
+                      min-height: 120px;
+                      padding: 10px 20px;
+                      background: #172d59;
+
+                      .rick-top {
+                        font-size: 14px;
+                        color: #97c1ff;
+                        line-height: 22px;
+                      }
+
+                      .rick-bot {
+                        display: flex;
+                        height: 40px;
+                        align-items: center;
+
+                        span {
+                          padding: 12px 18px;
+                          font-size: 14px;
+                          color: #fff;
+                          border-radius: 8px;
+                        }
+
+                        span:nth-of-type(1) {
+                          background: #d55756;
+                        }
+
+                        span:nth-of-type(2) {
+                          margin-left: 20px;
+                          background: #e37b00;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          /* 学习成绩 */
+          /* 用水及可视化检测 */
+          &.watercameratesting {
+
+            .head {
+              display: flex;
+              height: 25px;
+              justify-content: flex-start;
+              align-items: flex-end;
+
+              .icon {
+                width: 6px;
+                height: 13px;
+                margin: 0 6px 3px 2px;
+                background: url(../image/icon-index.jpg) 0 0 no-repeat;
+              }
+
+              .text {
+                color: #fff;
+                font-size: 16px;
+              }
+            }
+
+            .water {
+              float: left;
+              padding: 10px;
+              width: 64%;
+              height: 250px;
+              background: rgba(31, 37, 105, .75);
+
+              .center {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                height: 216px;
+
+                .left {
+                  width: 49%;
+                  height: 216px;
+                }
+
+                .right {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  width: 49%;
+                  height: 216px;
+
+                  .right-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 79px;
+                    margin: 5px;
+                    background: rgba(255, 255, 255, .08);
+                    cursor: pointer;
+
+                    .title {
+                      color: #97c1ff;
+                      font-size: 14px;
+                      margin-bottom: 6px;
+                    }
+
+                    .text {
+                      font-size: 14px;
+                      font-weight: bold;
+                      color: #fff;
+
+                      span {
+                        font-size: 18px;
+                        color: #fffd4a;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .camera {
+              float: right;
+              padding: 10px;
+              width: 34%;
+              height: 250px;
+              background: rgba(31, 37, 105, .75);
+              cursor: pointer;
+
+              .center {
+                display: flex;
+                width: 100%;
+                height: 200px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .icon {
+                  width: 108px;
+                  height: 108px;
+                  margin-top: 30px;
+                  margin-bottom: 26px;
+                  background: url(../image/camera-testing.png) 0 0 no-repeat;
+                }
+
+                .text {
+                  font-size: 16px;
+                  color: #97c1ff;
+                }
+              }
+            }
+          }
+
+          /* 用水及可视化检测 */
+          /* 用电及烟感检测 */
+          &.electricsmoketesting {
+            .head {
+              display: flex;
+              height: 25px;
+              justify-content: flex-start;
+              align-items: flex-end;
+
+              .icon {
+                width: 6px;
+                height: 13px;
+                margin: 0 6px 3px 2px;
+                background: url(../image/icon-index.jpg) 0 0 no-repeat;
+              }
+
+              .text {
+                color: #fff;
+                font-size: 16px;
+              }
+            }
+
+            .electric {
+              float: left;
+              padding: 10px;
+              width: 49%;
+              height: 250px;
+              background: rgba(31, 37, 105, .75);
+
+              .center {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                height: 216px;
+
+                .left {
+                  width: 49%;
+                  height: 216px;
+                }
+
+                .right {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  width: 49%;
+                  height: 216px;
+
+                  .right-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 79px;
+                    margin: 5px;
+                    background: rgba(255, 255, 255, .08);
+                    cursor: pointer;
+
+                    .title {
+                      color: #97c1ff;
+                      font-size: 14px;
+                      margin-bottom: 6px;
+                    }
+
+                    .text {
+                      font-size: 14px;
+                      font-weight: bold;
+                      color: #fff;
+
+                      span {
+                        font-size: 18px;
+                        color: #fffd4a;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .smoke {
+              float: right;
+              padding: 10px;
+              width: 50%;
+              height: 250px;
+              background: rgba(31, 37, 105, .75);
+
+              .center {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                height: 216px;
+
+                .left {
+                  width: 49%;
+                  height: 216px;
+                }
+
+                .right {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  width: 49%;
+                  height: 216px;
+
+                  .right-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 79px;
+                    margin: 5px;
+                    background: rgba(255, 255, 255, .08);
+                    cursor: pointer;
+
+                    .title {
+                      color: #97c1ff;
+                      font-size: 14px;
+                      margin-bottom: 6px;
+                    }
+
+                    .text {
+                      font-size: 14px;
+                      font-weight: bold;
+                      color: #fff;
+
+                      span {
+                        font-size: 18px;
+                        color: #fffd4a;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          /* 用电及烟感检测 */
+          /* 燃气及火灾自动联网检测 */
+          &.gasinfotxtesting {
+            .head {
+              display: flex;
+              height: 25px;
+              justify-content: flex-start;
+              align-items: flex-end;
+
+              .icon {
+                width: 6px;
+                height: 13px;
+                margin: 0 6px 3px 2px;
+                background: url(../image/icon-index.jpg) 0 0 no-repeat;
+              }
+
+              .text {
+                color: #fff;
+                font-size: 16px;
+              }
+            }
+
+            .gas,
+            .infotx {
+              padding: 10px;
+              width: 49%;
+              height: 250px;
+              background: rgba(31, 37, 105, .75);
+
+              .center {
+                display: flex;
+                flex-direction: column;
+                height: 212px;
+
+                .top {
+                  flex: 1;
+                }
+
+                .bot {
+                  display: flex;
+                  justify-content: space-between;
+                  width: 100%;
+                  height: 70px;
+
+                  .bot-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 66px;
+                    cursor: pointer;
+
+                    .title {
+                      color: #97c1ff;
+                      font-size: 14px;
+                      margin-bottom: 6px;
+                    }
+
+                    .text {
+                      font-size: 14px;
+                      font-weight: bold;
+                      color: #fff;
+
+                      span {
+                        font-size: 18px;
+                        color: #fffd4a;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          /* 燃气及火灾自动联网检测 */
+        }
+      }
+
+      .item:nth-child(2) {
+        grid-column-start: a-end;
+        grid-column-end: c-start;
+        grid-row-start: b-start;
+        grid-row-end: e-end;
+      }
+    }
+  }
+}

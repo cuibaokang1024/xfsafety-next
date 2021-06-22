@@ -1,0 +1,163 @@
+  .hiddendangerstatus-dialog {
+    .dialog-content {
+      position: relative;
+      height: 560px;
+      padding: 15px 10px 0;
+      background-color: rgba(255, 255, 255, 0.1);
+      overflow-x: scroll;
+
+      .el-steps {
+        .el-step-container {
+          position: relative;
+
+          &.step-icon-static {
+            .el-step__icon {
+              background: url(../images/circle.png) -94px 0 no-repeat !important;
+            }
+          }
+
+          .el-step {
+            width: 326px !important;
+            max-width: 326px !important;
+            padding-top: 80px;
+
+            .el-step__head {
+              .el-step__line {
+                top: 35px;
+                background-color: transparent;
+                background: url(../images/line.png) 0 0 repeat-x;
+
+                .el-step__line-inner {
+                  display: none;
+                }
+              }
+
+              .el-step__icon {
+                width: 84px;
+                height: 71px;
+                left: 34%;
+                border-radius: 0;
+                border: 0px solid;
+                background-color: transparent;
+                background: url(../images/circle.png) 0 0 no-repeat;
+
+                .el-step__icon-inner {
+                  display: none;
+                }
+              }
+            }
+
+            .el-step__main {
+              .el-step__title {
+                position: absolute;
+                top: 96px;
+                left: 108px;
+                font-size: 14px;
+                color: #fff !important;
+                z-index: 999;
+                width: 80px;
+                text-align: center;
+              }
+            }
+          }
+
+          .step-title {
+            position: absolute;
+            left: 56px;
+            top: 50px;
+            font-size: 14px;
+            color: #97c1ff !important;
+          }
+
+          .step-info {
+            position: absolute;
+            width: 284px;
+            min-height: 100px;
+            top: 180px;
+            left: 22px;
+            padding: 16px 20px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.15);
+
+            .info-text {
+              display: flex;
+              width: 100%;
+              color: #97c1ff;
+              font-size: 14px;
+              line-height: 24px;
+
+              .info-tit {
+                width: 30%;
+                text-align: right;
+                font-weight: bold;
+              }
+
+              .info-txt {
+                width: 70%;
+                text-align: left;
+                word-break: break-all;
+                word-wrap: break-word;
+                white-space: normal;
+              }
+
+              .info-img {
+                width: 70%;
+
+                img {
+                  max-width: 100%;
+                }
+              }
+            }
+
+            .info-mess {
+              width: 100%;
+              color: #97c1ff;
+              font-size: 14px;
+              line-height: 24px;
+              word-break: break-all;
+              word-wrap: break-word;
+              white-space: normal;
+            }
+
+            .info-btn {
+              display: flex;
+              justify-content: space-around;
+              width: 100%;
+              height: 38px;
+
+              button {
+                padding: 10px 20px;
+                color: #fff;
+                border-radius: 5px;
+                outline: 0;
+                cursor: pointer;
+              }
+
+              .success {
+                border: 1px solid #0091a2;
+                background: #0091a2;
+              }
+
+              .fail {
+                border: 1px solid #af5050;
+                background: #af5050;
+              }
+            }
+
+            .step-trian {
+              position: absolute;
+              top: -29px;
+              left: 88px;
+              width: 38px;
+              height: 30px;
+              background: url(../images/triangle.png) 0 0 no-repeat;
+            }
+          }
+
+          .el-step:last-of-type .el-step__line {
+            display: block
+          }
+        }
+      }
+    }
+  }

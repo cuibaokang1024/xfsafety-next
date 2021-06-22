@@ -1,0 +1,197 @@
+.staffworkalert-container {
+  .staffworkalert-content {
+    width: 100%;
+    height: 560px;
+
+    /* 查询框 */
+    .search-box {
+      width: 100%;
+      margin-bottom: 15px;
+
+      .el-form {
+        .el-form-item {
+          .el-form-item__label {
+            color: #97c1ff;
+            font-size: 14px;
+          }
+
+          .el-form-item__content {
+            .el-date-editor {
+              width: 100%;
+            }
+
+            .el-input__inner {
+              height: 30px;
+              color: #97c1ff;
+              font-size: 14px;
+              border: 1px solid #153f98;
+              background-color: rgba(255, 255, 255, .2);
+            }
+          }
+
+          .el-radio__label {
+            color: #85a6d6;
+          }
+        }
+      }
+
+      .el-button {
+        width: 79px;
+        height: 30px;
+        padding: 0;
+        margin-top: 3px;
+        text-align: center;
+        line-height: 30px;
+      }
+    }
+
+    /* 查询框 */
+    /* 默认框 */
+    .staff-box {
+      .staff-form {
+        display: flex;
+
+        .el-form-item {
+          flex: 0 1 25%;
+          margin-bottom: 16px;
+
+          .el-form-item__label {
+            color: #97c1ff;
+            font-size: 14px;
+          }
+
+          .el-input__inner {
+            color: #97c1ff;
+            font-size: 14px;
+            border: 1px solid #153f98;
+            background-color: rgba(255, 255, 255, .2);
+          }
+        }
+      }
+    }
+
+    /* 默认框 */
+
+    .el-divider {
+      margin: 16px 0;
+      background-color: #526182;
+    }
+
+    .content-outer {
+      width: 100%;
+      height: 504px;
+      overflow-y: scroll;
+
+      .content-item {
+        width: 100%;
+
+        .item-title {
+          font-size: 14px;
+          color: #e5ecae;
+          margin-bottom: 16px;
+        }
+
+        .item-list {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            flex: 0 1 25%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.staffworkitem-container {
+  .staffworkitem-content {
+    width: 100%;
+    height: 560px;
+    overflow-y: scroll;
+
+    .title {
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .inner-mation {
+      padding: 16px 10px 0;
+      margin-right: 10px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .07);
+
+      .el-form {
+        display: flex;
+        flex-wrap: wrap;
+
+        .el-form-item {
+          flex: 0 1 50%;
+          margin-bottom: 16px;
+
+          .el-form-item__label {
+            color: #97c1ff;
+            font-size: 14px;
+          }
+
+          .el-input__inner {
+            color: #97c1ff;
+            font-size: 14px;
+            border: 1px solid #153f98;
+            background-color: rgba(255, 255, 255, .2);
+          }
+        }
+      }
+    }
+
+    .inner-record {
+      margin-right: 10px;
+    }
+
+    .inner-danger {
+      margin-bottom: 12px;
+      padding: 16px 10px 0;
+      margin-right: 10px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .07);
+
+      .el-form {
+        display: flex;
+        flex-wrap: wrap;
+
+        .el-form-item {
+          display: flex;
+          flex: 0 1 50%;
+          margin-bottom: 16px;
+
+          .el-form-item__label {
+            width: 120px !important;
+            color: #97c1ff;
+            font-size: 14px;
+          }
+
+          .el-form-item__content {
+            width: calc(100% - 120px) !important;
+          }
+
+          .el-input__inner {
+            color: #97c1ff;
+            font-size: 14px;
+            border: 1px solid #153f98;
+            background-color: rgba(255, 255, 255, .2);
+          }
+
+          .hidden-btn {
+            float: right;
+            color: #fff;
+            background: #1c7596;
+            border: 1px solid #1c7596;
+          }
+        }
+      }
+    }
+  }
+}

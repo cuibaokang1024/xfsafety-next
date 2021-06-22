@@ -1,0 +1,180 @@
+.wraper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: #001647;
+  >.el-container {
+    padding-top: 6px;
+    .el-header {
+      display: flex;
+      justify-content: space-between;
+      color: #fff;
+      font-size: 14px;
+      align-items: center;
+      box-sizing: content-box;
+      .left {
+        width: 181px;
+        height: 29px;
+        background: url(../assets/devImages/header_text_bg.png)0 0 no-repeat;
+        background-size: 100% 100%;
+        text-indent: 14px;
+        line-height: 29px;
+      }
+      .right {
+        display: flex;
+
+        .alarmNum {
+          display: flex;
+          align-items: center;
+
+          .num {
+            flex: 1;
+            height: 36px;
+            margin: 0 7px 0 2px;
+          }
+        }
+
+        .el-form {
+          display: flex;
+          align-items: center;
+
+          .el-form-item {
+            margin-bottom: 0;
+
+            label {
+              color: #fff;
+            }
+
+            .arrow {
+              position: absolute;
+              height: 12px;
+              width: 14px;
+              right: 12px;
+              top: 50%;
+              margin-top: -6px;
+              text-align: center;
+              -webkit-transition: all .3s;
+              transition: all .3s;
+              pointer-events: none;
+              transform: rotateZ(180deg);
+              background: url(../assets/devImages/input_arrow.png)center center no-repeat;
+
+              &.arrow-up {
+                transform: rotateZ(0deg);
+              }
+            }
+
+            .el-select {
+              .el-input__suffix {
+                display: none;
+              }
+
+              .el-popper[x-placement^="bottom"] .popper__arrow::after {
+                border-bottom-color: #001647;
+              }
+
+              .el-select-dropdown {
+                &.el-popper {
+                  background: #01133b;
+                  border: 1px solid #1559b0;
+                }
+
+                .el-select-dropdown__item.hover,
+                .el-select-dropdown__item:hover {
+                  background-color: #24549cb0;
+                  color: #fff;
+                }
+              }
+
+              &.mini {
+                input {
+                  background-image: url(../assets/devImages/input_mini_bg.png);
+                }
+              }
+
+              input {
+                background-color: transparent;
+                background-image: url(../assets/devImages/input_bg.png);
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .tips {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .el-main {
+      padding: 0;
+      position: relative;
+
+      .el-container {
+        .el-header {
+          .title {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 40px;
+            color: #fff;
+            overflow: hidden;
+
+            .bg {
+              font-size: 332px;
+              position: absolute;
+              top: -150px;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+        }
+
+        .el-main {
+          position: relative;
+          padding-bottom: 30px;
+
+          >.camera-btn {
+            width: 175px;
+            height: 38px;
+            text-align: center;
+            line-height: 38px;
+            margin: 0 0 18px 18px;
+            background: url(../views/IOT/cameraEquipmentAll/components/image/camera-btn.png) 0 0 no-repeat;
+
+            span {
+              color: #fff;
+              font-size: 14px;
+            }
+          }
+
+          >ul {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 355px);
+            grid-row-gap: 10px;
+            justify-content: space-evenly;
+
+            li {
+              list-style: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

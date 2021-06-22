@@ -1,0 +1,111 @@
+.consult-dialog {
+
+  .dialog-content {
+    height: 520px;
+    background: rgba(255, 255, 255, 0.07);
+
+    .el-main {
+      >.el-tabs {
+        >.el-tabs__header {
+          >.el-tabs__nav-wrap {
+            >.el-tabs__nav-scroll {
+              >.el-tabs__nav {
+                >.el-tabs__active-bar {
+                  display: none;
+                }
+
+                >.el-tabs__item {
+                  width: 70px;
+                  height: 36px;
+                  padding: 0px;
+                  margin-right: 6px;
+                  text-align: center;
+                  line-height: 38px;
+                  color: #97c1ff;
+                  background: #0045a2;
+                  border-top-left-radius: 10px;
+                  border-top-right-radius: 10px;
+
+                  &.is-active {
+                    color: #fff;
+                    background: #0256c8;
+                  }
+                }
+              }
+            }
+          }
+
+          .el-tabs__nav-wrap::after {
+            background-color: #0045a2;
+          }
+        }
+
+        .el-tabs__content {
+          .tab-container-item {
+            position: relative;
+
+            .remind-btn {
+              position: absolute;
+              top: 10px;
+              right: 0px;
+              color: #fff;
+              font-size: 12px;
+              border: 1px solid #0cc3b4;
+              background-color: #0cc3b4;
+              z-index: 999;
+            }
+
+            .el-tabs {
+              .el-tabs__header {
+                .el-tabs__nav-wrap {
+                  .el-tabs__nav-scroll {
+                    .el-tabs__active-bar {
+                      display: none;
+                    }
+
+                    .el-tabs__item {
+                      padding: 0 10px;
+                      margin: 0 6px;
+                      color: #97c1ff;
+                      border-bottom: 5px solid #0755a6;
+
+                      &.is-active {
+                        color: #fff;
+                        border-bottom: 5px solid #007eff;
+                      }
+                    }
+                  }
+                }
+
+                .el-tabs__nav-wrap::after {
+                  display: none;
+                }
+              }
+
+              .el-tabs__content {}
+            }
+          }
+        }
+      }
+    }
+
+    >.el-scrollbar {
+      height: 100%;
+
+      .el-scrollbar__wrap {
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+
+      .el-scrollbar__bar {
+        &.is-vertical {
+          width: 4px; // 滚动条宽度
+        }
+      }
+
+      .el-scrollbar__thumb {
+        background-color: #4c79eb; // 可设置滚动条颜色
+      }
+    }
+  }
+}

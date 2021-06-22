@@ -1,0 +1,177 @@
+.access-main {
+  width: 100%;
+  height: 100%;
+  padding: 54px 20px;
+  background: #001647;
+
+  &.accessWater {
+    .bg {
+      width: 100%;
+      height: 100%;
+      margin: 2% 6%;
+      background: url(../image/bg-water.png) 0 0 no-repeat;
+    }
+  }
+
+  &.accessGas {
+    .bg {
+      width: 100%;
+      height: 100%;
+      margin: 3% 16%;
+      background: url(../image/bg-gas.png) 0 0 no-repeat;
+    }
+  }
+
+  &.accessInfotx {
+    .bg {
+      width: 100%;
+      height: 100%;
+      margin: 2% 5%;
+      background: url(../image/bg-infotx.png) 0 0 no-repeat;
+    }
+  }
+
+  &.accessElectric {
+    .bg {
+      width: 100%;
+      height: 100%;
+      margin: 2% 8%;
+      background: url(../image/bg-electric.png) 0 0 no-repeat;
+    }
+  }
+
+  &.accessSmoke {
+    display: flex;
+    justify-content: space-between;
+
+    .content {
+      height: 715px;
+      background: rgba(31, 37, 105, .75);
+
+      &.left {
+        width: 52%;
+
+        .text {
+          padding-top: 47px;
+          padding-left: 26px;
+          font-size: 24px;
+          color: #fff83b;
+          margin-bottom: 20px;
+        }
+
+        .access {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 56px;
+          margin: 58px 0;
+
+          .access-container {
+            position: relative;
+            min-width: 290px;
+            height: 56px;
+            text-align: left;
+            line-height: 56px;
+            font-size: 18px;
+            color: #fff;
+            padding-left: 148px;
+            background: url(../image/icon-bg.png) 0 0 no-repeat;
+            background-size: 100% 100%;
+
+            .cover {
+              position: absolute;
+              top: 0px;
+              left: 20px;
+              width: 119px;
+              height: 45px;
+              text-align: center;
+              line-height: 45px;
+              font-size: 20px;
+              color: #fff;
+              background: #ef8700;
+            }
+          }
+        }
+
+        .center {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          padding: 25px;
+
+          .item {
+            display: flex;
+
+            .item-img {
+              width: 110px;
+              height: 110px;
+              margin-right: 22px;
+
+              &.smoke-1 {
+                background: url(../image/icon-smoke-1.png) 0 0 no-repeat;
+              }
+
+              &.smoke-2 {
+                background: url(../image/icon-smoke-2.png) 0 0 no-repeat;
+              }
+
+              &.smoke-3 {
+                background: url(../image/icon-smoke-3.png) 0 0 no-repeat;
+              }
+
+              &.smoke-4 {
+                background: url(../image/icon-smoke-4.png) 0 0 no-repeat;
+              }
+            }
+
+            .item-txt {
+              width: 220px;
+
+              .title {
+                display: flex;
+                align-items: center;
+                margin-bottom: 18px;
+                margin-top: 6px;
+
+                i {
+                  display: block;
+                  width: 31px;
+                  height: 31px;
+                  font-style: normal;
+                  color: #fff;
+                  text-align: center;
+                  line-height: 31px;
+                  border-radius: 50%;
+                  background: #0184c8;
+                }
+
+                span {
+                  padding-left: 8px;
+                  font-size: 18px;
+                  color: #fff;
+                }
+              }
+
+              .message {
+                line-height: 22px;
+                font-size: 14px;
+                color: #97c1ff;
+              }
+            }
+          }
+        }
+      }
+
+      &.right {
+        width: 47%;
+
+        .bg {
+          width: 100%;
+          height: 100%;
+          background: url(../image/bg-smoke.png) 0 0 no-repeat;
+        }
+      }
+    }
+  }
+}

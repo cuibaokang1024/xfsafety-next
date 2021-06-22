@@ -1,0 +1,53 @@
+.custom-form {
+  .dialog-content {
+    .el-tabs {
+      .el-tabs__header {
+        .el-tabs__nav-wrap {
+          .el-tabs__nav-scroll {
+            .el-tabs__nav {
+              .el-tabs__active-bar {
+                display: none;
+              }
+
+              .el-tabs__item {
+                min-width: 100px;
+                min-height: 60px;
+                padding: 0;
+                margin: 0 5px;
+                text-align: center;
+                line-height: 60px;
+                font-size: 14px;
+                font-family: Microsoft YaHei;
+                font-weight: bold;
+                color: #FFFFFF;
+                border: 1px solid #39408C;
+                border-radius: 5px;
+                background: #141730;
+
+                &.is-active {
+                  background: linear-gradient(90deg, #7342FE, #3843FB);
+                }
+              }
+            }
+          }
+        }
+
+        .el-tabs__nav-wrap::after {
+          display: none;
+        }
+      }
+
+      .el-tabs__content {
+        height: 100%;
+        margin-left: 5px;
+
+        .el-table__header {
+          th {
+            color: #97c1ff;
+            background: rgba(255, 255, 255, .1);
+          }
+        }
+      }
+    }
+  }
+}

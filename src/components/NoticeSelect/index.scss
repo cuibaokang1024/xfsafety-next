@@ -1,0 +1,99 @@
+.noticeSelect {
+  .select-wrapper {
+    position: relative;
+    width: 100%;
+
+    .select-btn {
+      position: absolute;
+      right: 0;
+      top: 0px;
+      height: 36px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: #97c1ff;
+      background: #00479d;
+      border: 1px solid #00479d;
+    }
+  }
+}
+
+.noticeSelect-dialog {
+  .el-dialog__body {
+    padding-top: 0;
+  }
+
+  .dialog-content {
+    width: 100%;
+    height: 100%;
+
+    .el-container {
+      height: 100%;
+
+      .el-main {
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+
+        .el-table {
+          margin: 0;
+        }
+      }
+    }
+
+    .noticeSelect-left {
+      width: 300px !important;
+      padding: 15px;
+      margin-right: 20px;
+      overflow: hidden;
+      overflow-y: auto;
+      background-color: rgba(255, 255, 255, 0.07);
+
+      .treenode-container {
+        height: 100%;
+      }
+    }
+
+    .noticeSelect-right {
+      width: 180px !important;
+      margin-left: 15px;
+    }
+
+    .el-aside {
+      height: 500px;
+      margin-bottom: 0px;
+      background: rgba(255, 255, 255, 0.17);
+
+      >.el-scrollbar {
+        height: 100%;
+
+        .el-scrollbar__wrap {
+          overflow-x: hidden;
+          overflow-y: scroll;
+        }
+
+        .el-scrollbar__bar {
+          &.is-vertical {
+            width: 4px; // 滚动条宽度
+          }
+        }
+
+        .el-scrollbar__thumb {
+          background-color: #4c79eb; // 可设置滚动条颜色
+        }
+      }
+
+      .selected-list {
+        ul {
+          li {
+            color: #b9d5ff;
+            text-align: center;
+            margin-top: 10px;
+            box-shadow: inset 0px 0px 7px 0px #97c1ff;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.access-cover {
+  .head {
+    display: flex;
+    height: 25px;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    .icon {
+      width: 6px;
+      height: 13px;
+      margin: 0 6px 3px 2px;
+      background: url(../../image/icon-index.jpg) 0 0 no-repeat;
+    }
+
+    .text {
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+
+  .access-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 178px;
+
+    .cover {
+      &.cover-img {
+        flex: 0 1 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-right: 10px;
+
+        .img {
+          width: 90px;
+          height: 90px;
+          margin-top: 20px;
+          background-size: 100%;
+
+          &.waterImg {
+            background: url(../../image/water.png) 0 0 no-repeat;
+          }
+
+          &.electricImg {
+            background: url(../../image/electric.png) 0 0 no-repeat;
+          }
+
+          &.smokeImg {
+            background: url(../../image/smoke.png) 0 0 no-repeat;
+          }
+
+          &.gasImg {
+            background: url(../../image/gas.png) 0 0 no-repeat;
+          }
+
+          &.infotxImg {
+            background: url(../../image/infotx.png) 0 0 no-repeat;
+          }
+        }
+
+        .text {
+          font-size: 14px;
+          font-weight: bold;
+          color: #ff7f7f;
+          margin-top: 10px;
+        }
+      }
+
+      &.cover-text {
+        flex: 0 1 58%;
+
+        .bg {
+          width: 106px;
+          height: 31px;
+          text-align: center;
+          line-height: 31px;
+          margin-right: 28px;
+          margin-bottom: 8px;
+          background: url(../../image/icon-txt.png) 0 0 no-repeat;
+
+          .duct {
+            font-size: 14px;
+            margin-right: 20px;
+            font-weight: bold;
+            color: #dfe115;
+          }
+        }
+
+        .copywriting {
+          width: 100%;
+          font-size: 14px;
+          line-height: 21px;
+          color: #97c1ff;
+        }
+      }
+    }
+  }
+
+  .btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 28px;
+
+    .el-button {
+      margin-right: 10px;
+      padding: 3px 10px;
+      color: #fff;
+      border: 1px solid #009fcd;
+      background: #009fcd;
+
+      span {
+        font-size: 12px;
+        font-weight: bold;
+        color: #fff;
+      }
+    }
+  }
+}
