@@ -55,6 +55,10 @@ export default {
     this.onlyOneChild = null
     return {}
   },
+  created () {
+    console.log(this.item.meta.icon)
+    // console.log(this.onlyOneChild.meta.icon || (this.item.meta && this.item.meta.icon))
+  },
   methods: {
     hasOneShowingChild (children = [], parent) {
       const showingChildren = children.filter(item => {

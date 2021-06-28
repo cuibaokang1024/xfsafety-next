@@ -1,6 +1,7 @@
 import router from './router'
 import store from './store'
 import { source } from '@/utils/request'
+import addRouters from '@/utils/addRouters'
 import { ElMessage } from 'element-plus'
 import NProgress from 'nprogress' // 进度条
 // import 'nprogress/nprogress.css' // 进度条样式
@@ -34,14 +35,15 @@ router.beforeEach(async (to, from, next) => {
           // 获取用户信息
           await store.dispatch('user/getInfo')
           // 基于角色生成可访问路由图
-          const accessRoutes = await store.dispatch('permission/generateRoutes')
-          // 动态添加可访问路由
-          router.addRoute(accessRoutes)
+          const accessRouters = await store.dispatch('permission/generateRoutes')
+          // // 动态添加可访问路由
+          addRouters(accessRouters)
           console.log(router.getRoutes())
           // hack method to ensure that addRoutes is complete
           // 设置replace:true，这样导航就不会留下历史记录
           next({ ...to, replace: true })
         } catch (error) {
+          console.log(error)
           // 移除Token并转到登录页以重新登录
           await store.dispatch('user/resetToken')
           ElMessage.error(error || 'Has Error')

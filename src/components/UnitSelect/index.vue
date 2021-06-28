@@ -15,12 +15,12 @@
     </div>
     <el-dialog
       class="dark unitSelect-dialog"
-      :visible.sync="dialogUnitVisible"
+      v-model:visible="dialogUnitVisible"
       append-to-body
       :show-close="false"
       width="1200px"
     >
-      <div slot="title" class="dialog-title">社会单位选择</div>
+      <div name="title" class="dialog-title">社会单位选择</div>
       <div class="dialog-content">
         <div
           v-loading="listLoading"
@@ -74,8 +74,8 @@
               <Pagination
                 v-show="total > 0"
                 :total="total"
-                :page.sync="listQuery.page"
-                :limit.sync="listQuery.limit"
+                v-model:page="listQuery.page"
+                v-model:limit="listQuery.limit"
                 @pagination="_handleUnitRecordList"
               />
             </div>
@@ -83,7 +83,7 @@
           </div>
         </div>
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="handleHide()">关 闭</el-button>
         <el-button type="primary" @click="handleSubmit()">确 定</el-button>
       </div>
@@ -137,7 +137,7 @@ export default {
       default: false
     }
   },
-  data() {
+  data () {
     return {
       listLoading: false,
       dialogUnitVisible: false,
@@ -181,19 +181,19 @@ export default {
       tableData: []
     }
   },
-  created() {
+  created () {
     this._handleAreaTree()
     this._handleUnitRecordList()
   },
   methods: {
     // 获取tree
-    _handleAreaTree() {
+    _handleAreaTree () {
       handlerUnitRecordAreaTree().then(res => {
         this.treeData = res.data
       })
     },
     // 获取列表
-    _handleUnitRecordList() {
+    _handleUnitRecordList () {
       this.listLoading = true
       if (this.isAgent) {
         handleAgentUnitList(this.listQuery).then(res => {
@@ -214,38 +214,38 @@ export default {
       }
     },
     // 树状方法
-    handleNodeClick(data, node) {
+    handleNodeClick (data, node) {
       this.listQuery.areaId = data.id
       this._handleUnitRecordList()
     },
     // 查询函数
-    handleFilter(data) {
+    handleFilter (data) {
       this.listQuery = { ...this.listQuery, ...data, officeName: data.name }
       this._handleUnitRecordList()
     },
     // 重置函数
-    handleResetForm(formName) {
+    handleResetForm (formName) {
       this.ruleForm = {}
       this.listQuery.name = ''
       this.listQuery.officeName = ''
       this.$refs[formName].resetFields()
     },
     // 表格选择checkbox
-    handleSelectionChange(val) {
+    handleSelectionChange (val) {
       this.multipleSelection = val
     },
-    handleShow() {
+    handleShow () {
       if (this.disabled) {
         return
       }
       this.dialogUnitVisible = true
     },
-    handleHide() {
+    handleHide () {
       this.multipleSelection = []
       this.$refs.BaseTable.clearSelection()
       this.dialogUnitVisible = false
     },
-    handleSubmit() {
+    handleSubmit () {
       const data = this.multipleSelection
       if (Array.isArray(data)) {
         if (data.length === 0) {

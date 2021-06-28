@@ -97,7 +97,7 @@
       class="unChk-dialog dark"
       width="1000px"
     >
-      <div slot="title" class="dialog-title">{{ title }}</div>
+      <div name="title" class="dialog-title">{{ title }}</div>
       <div class="dialog-content">
         <el-scrollbar>
           <div class="unChk-content">
@@ -112,7 +112,7 @@
           </div>
         </el-scrollbar>
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="handleHide">关 闭</el-button>
       </div>
     </el-dialog>

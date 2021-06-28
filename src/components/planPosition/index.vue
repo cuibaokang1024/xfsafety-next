@@ -14,11 +14,11 @@
       v-if="dialogMapVisible"
       width="930px"
       class="dark planPosition"
-      :visible.sync="dialogMapVisible"
+      v-model:visible="dialogMapVisible"
       append-to-body
       :destroy-on-close="true"
     >
-      <div slot="title" class="dialog-title">平面图定位</div>
+      <div name="title" class="dialog-title">平面图定位</div>
       <div class="dialog-content" style="height: 400px;padding: 0;">
         <div class="mark-paper__container">
           <div ref="wrapRef" class="mark-paper__wrap">
@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="handleHide">关闭</el-button>
         <el-button @click="handlerSubmit">确定</el-button>
       </div>
@@ -53,7 +53,7 @@ export default {
       default: -1
     }
   },
-  data() {
+  data () {
     return {
       dialogMapVisible: false,
       canvasRef: null,
@@ -79,23 +79,23 @@ export default {
     }
   },
   computed: {
-    position() {
+    position () {
       return `x:${this.initPosition.x},y:${this.initPosition.y}`
     }
   },
   watch: {
-    canvasScale(val) {
+    canvasScale (val) {
       this.handleCanvas()
       this.scalCanvas()
     },
-    canvasCurrentHistory(val) {
+    canvasCurrentHistory (val) {
       this.handleCanvas()
     }
   },
-  mounted() {},
-  created() {},
+  mounted () {},
+  created () {},
   methods: {
-    async fillImage() {
+    async fillImage () {
       const canvas = this.canvasRef
       const wrap = this.wrapRef
       const pointContainer = this.pointContainerRef
@@ -148,14 +148,14 @@ export default {
       img.onerror = null
       this.loading = false
     },
-    scalCanvas() {
+    scalCanvas () {
       const pointContainer = this.pointContainerRef
       const translatePointX = this.translatePointXRef
       const translatePointY = this.translatePointYRef
       pointContainer &&
         (pointContainer.style.transform = `scale(${this.canvasScale},${this.canvasScale}) translate(${translatePointX}px,${translatePointY}px)`)
     },
-    generateLinePoint(x, y) {
+    generateLinePoint (x, y) {
       const { current: wrap } = this.wrapRef
       const { current: translatePointX } = this.translatePointXRef
       const { current: translatePointY } = this.translatePointYRef
@@ -179,7 +179,7 @@ export default {
       }
     },
 
-    handleLineMode(downX, downY) {
+    handleLineMode (downX, downY) {
       const canvas = this.canvasRef
       const wrap = this.wrapRef
       const context = canvas && canvas.getContext('2d')
@@ -224,7 +224,7 @@ export default {
         canvas.onmouseup = null
       }
     },
-    handlePointMove(event) {
+    handlePointMove (event) {
       if (!this.isPointPress) {
         return null
       }
@@ -234,7 +234,7 @@ export default {
       this.moveX = event.offsetX
       this.moveY = event.offsetY
     },
-    handleMoveMode(downX, downY) {
+    handleMoveMode (downX, downY) {
       const canvas = this.canvasRef
       const wrap = this.wrapRef
       const pointContainer = this.pointContainerRef
@@ -262,7 +262,7 @@ export default {
         this.fillStartPointYRef = fillStartPointY + (upY - downY)
       }
     },
-    handleCanvas() {
+    handleCanvas () {
       const canvas = this.canvasRef
       const wrap = this.wrapRef
       const context = canvas && canvas.getContext('2d')
@@ -271,7 +271,7 @@ export default {
       // 清除上一次设置的监听，以防获取参数错误
       wrap.onmousedown = null
       const _this = this
-      wrap.onmousedown = function(event) {
+      wrap.onmousedown = function (event) {
         const downX = event.pageX
         const downY = event.pageY
         _this.handleMoveMode(downX, downY)
@@ -288,7 +288,7 @@ export default {
         this.canvasScale = newScale
       }
     },
-    getBuildingPlan(id) {
+    getBuildingPlan (id) {
       return new Promise((resolve, reject) => {
         getFilesByBuildingId({ buildingId: id })
           .then(res => {
@@ -308,10 +308,10 @@ export default {
           })
       })
     },
-    handleScaleChange(value) {
+    handleScaleChange (value) {
       this.canvasScale = value
     },
-    async handleShow() {
+    async handleShow () {
       this.fillImageSrc = await this.getBuildingPlan(this.partAddrId)
       if (!this.fillImageSrc) {
         return false
@@ -326,10 +326,10 @@ export default {
         this.fillImage()
       }, 200)
     },
-    handleHide() {
+    handleHide () {
       this.dialogMapVisible = false
     },
-    handlerSubmit() {
+    handlerSubmit () {
       this.dialogMapVisible = false
       this.$emit('getPosition', { x: this.moveX, y: this.moveY })
     }

@@ -1,0 +1,16 @@
+
+  .danger-table:not(.el-table-white) {
+    border-color: #E1E1E1;
+  }
+  .danger-table:not(.el-table-white) .el-table__body tr td {
+    border-color: #E1E1E1;
+  }
+  .dangerReport .danger-table {
+    margin-top: 9px;
+  }
+  .dangerReport .danger-table .el-table__header-wrapper {
+    background: #D2D2D2;
+  }
+  .dangerReport .danger-table .cell {
+    color: #000;
+  }

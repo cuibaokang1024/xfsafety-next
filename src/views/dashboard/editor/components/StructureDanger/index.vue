@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="dialogview dark">
-        <el-dialog title="待办事项" :visible.sync="dialogVisible" width="678px">
+        <el-dialog title="待办事项" v-model:visible="dialogVisible" width="678px">
           <div class="dialog-content">
             <el-form label-width="60px" :model="activitiesData">
               <el-form-item label="标题：">
@@ -69,7 +69,7 @@
               </el-form-item>
             </el-form>
           </div>
-          <span slot="footer" class="dialog-footer">
+          <span name="footer" class="dialog-footer">
             <el-button @click="dialogVisible = false">关闭</el-button>
           </span>
         </el-dialog>
@@ -93,7 +93,7 @@ export default {
   components: {
     OrganizationChart
   },
-  data() {
+  data () {
     return {
       OrgData: {},
       listQuery: {
@@ -109,21 +109,21 @@ export default {
     }
   },
   watch: {
-    activitiesData() {
+    activitiesData () {
       this._handlerTodoList()
     }
   },
-  created() {
+  created () {
     this._handlerOfficeOrg()
     this._handlerTodoList()
   },
   methods: {
-    _handlerOfficeOrg() {
+    _handlerOfficeOrg () {
       handlerOfficeOrg().then(res => {
         this.OrgData = res.data
       })
     },
-    _handlerTodoList() {
+    _handlerTodoList () {
       handlerTodoList(this.listQuery).then(res => {
         this.activities = res.data.list
         this.disabled = false
@@ -136,10 +136,10 @@ export default {
         }
       })
     },
-    handlerLinkOrgView() {
+    handlerLinkOrgView () {
       this.$router.push('/dashboard/editor/orgview')
     },
-    handleScrollLoad() {
+    handleScrollLoad () {
       if (!this.hasMore) {
         this.disabled = true // 关闭无限滚动
         return false
@@ -147,7 +147,7 @@ export default {
       this.listQuery.pageSize += 5
       this._handlerTodoList()
     },
-    handlerClickReadDetail(id) {
+    handlerClickReadDetail (id) {
       const para = { id }
       handlerTodoDetail(para).then(res => {
         this.activitiesData = res.data

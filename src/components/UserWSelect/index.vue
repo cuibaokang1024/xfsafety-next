@@ -8,11 +8,11 @@
     </div>
     <el-dialog
       class="dark userSelect-dialog"
-      :visible.sync="dialogUserVisible"
+      v-model:visible="dialogUserVisible"
       append-to-body
       width="1000px"
     >
-      <div slot="title" class="dialog-title">人员选择</div>
+      <div name="title" class="dialog-title">人员选择</div>
       <div class="dialog-content">
         <el-container>
           <el-main>
@@ -35,8 +35,8 @@
             <pagination
               v-show="total > 0"
               :total="total"
-              :page.sync="listQuery.page"
-              :limit.sync="listQuery.pageSize"
+              v-model:page="listQuery.page"
+              v-model:limit="listQuery.pageSize"
               @pagination="_getUserList"
             />
           </el-main>
@@ -55,7 +55,7 @@
           </el-aside>
         </el-container>
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="handleHide()">关 闭</el-button>
         <el-button type="primary" @click="handleSubmit()">确 定</el-button>
       </div>
@@ -88,7 +88,7 @@ export default {
       default: () => ''
     }
   },
-  data() {
+  data () {
     return {
       dialogUserVisible: false,
       listLoading: true,
@@ -131,14 +131,14 @@ export default {
       selectedList: []
     }
   },
-  created() {
+  created () {
     const userNameList = this.label.split(',')
     this.selectedList = this.value.split(',').map((item, index) => {
       return { id: parseInt(item), name: userNameList[index] }
     })
   },
   methods: {
-    _getUserList() {
+    _getUserList () {
       getUserList(this.listQuery).then(res => {
         this.total = res.data.totalCount
         this.userList = res.data.list
@@ -147,14 +147,14 @@ export default {
         })
       })
     },
-    handleShow() {
+    handleShow () {
       this.dialogUserVisible = true
       this._getUserList()
     },
-    handleHide() {
+    handleHide () {
       this.dialogUserVisible = false
     },
-    handleArrToStr(arr, obj) {
+    handleArrToStr (arr, obj) {
       let str = ''
       if (arr && arr.length > 0) {
         arr.forEach(item => {
@@ -168,11 +168,11 @@ export default {
       }
       return str
     },
-    handleFilter(data) {
+    handleFilter (data) {
       this.listQuery = { ...this.listQuery, ...data }
       this._getUserList()
     },
-    select(selection, row) {
+    select (selection, row) {
       const index = this.selectedList.findIndex(item => {
         return item.id === row.id
       })
@@ -182,8 +182,8 @@ export default {
         this.selectedList.splice(index, 1)
       }
     },
-    selectAll() {},
-    delSelected(user) {
+    selectAll () {},
+    delSelected (user) {
       const index_userList = this.userList.findIndex(item => {
         return item.id === user.id
       })
@@ -196,7 +196,7 @@ export default {
       }
     },
     // 回显选中项
-    selectInitVal() {
+    selectInitVal () {
       if (this.value) {
         if (this.userList.length > 0) {
           this.$refs.BaseTable.clearSelection()
@@ -211,10 +211,10 @@ export default {
         }
       }
     },
-    getSelectedUser() {
+    getSelectedUser () {
       return this.selectedList
     },
-    handleSubmit() {
+    handleSubmit () {
       const id = this.handleArrToStr(this.selectedList, 'id')
       const name = this.handleArrToStr(this.selectedList, 'name')
       this.$emit('update:value', id)

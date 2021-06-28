@@ -14,15 +14,15 @@
       v-if="dialogMapVisible"
       width="930px"
       class="dark PositionPicker"
-      :visible.sync="dialogMapVisible"
+      v-model:visible="dialogMapVisible"
       append-to-body
       :destroy-on-close="true"
     >
-      <div slot="title" class="dialog-title">地图定位</div>
+      <div name="title" class="dialog-title">地图定位</div>
       <div class="dialog-content" style="height: 400px;">
-        <position-picker ref="positionPicker" :position.sync="position" :address.sync="address" />
+        <position-picker ref="positionPicker" v-model:position="position" v-model:address="address" />
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="handlerRefreshPosition">重新定位</el-button>
         <el-button @click="handleHide">关闭</el-button>
         <el-button @click="handlerSubmit">确定</el-button>
@@ -50,7 +50,7 @@ export default {
       default: ''
     }
   },
-  data() {
+  data () {
     return {
       dialogMapVisible: false,
       position: '',
@@ -58,27 +58,27 @@ export default {
     }
   },
   watch: {
-    addr(newVal) {
+    addr (newVal) {
       this.position = ''
       this.address = newVal
     }
   },
-  created() {
+  created () {
     this.position = this.lnglat
     this.address = this.addr
   },
   methods: {
     // 地图重新定位
-    handlerRefreshPosition() {
+    handlerRefreshPosition () {
       this.$refs.positionPicker.mapPosition()
     },
-    handleShow() {
+    handleShow () {
       this.dialogMapVisible = true
     },
-    handleHide() {
+    handleHide () {
       this.dialogMapVisible = false
     },
-    handlerSubmit() {
+    handlerSubmit () {
       this.$refs.positionPicker.upDateLnglat()
       this.$emit('update:position', this.position)
       this.$emit('update:address', this.address)

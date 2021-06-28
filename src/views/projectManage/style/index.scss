@@ -1,0 +1,285 @@
+.project-main {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: #202342;
+
+  /* 查询框 */
+  .search-box {
+    width: 100%;
+    margin-bottom: 15px;
+
+    .search-form {
+      .el-range-editor {
+        .el-range-input {
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  /* 查询框 */
+  /* 条件框 */
+  .filter-box {
+    width: 100%;
+    height: 28px;
+    margin-bottom: 15px;
+
+    .el-button {
+      height: 28px;
+      padding: 0 21px;
+      color: #fff;
+      text-align: center;
+      line-height: 28px;
+
+      &.add {
+        border: 1px solid #409eff;
+        background-color: #409eff;
+      }
+
+      &.add-ment {
+        border: 1px solid #409eff;
+        background-color: #409eff;
+      }
+
+      &.add-user {
+        border: 1px solid #00a0e9;
+        background-color: #00a0e9;
+      }
+
+      &.edit {
+        border: 1px solid #67c23a;
+        background-color: #67c23a;
+      }
+
+      &.delect {
+        border: 1px solid #dd6060;
+        background-color: #dd6060;
+      }
+
+      &.user {
+        border: 1px solid #e6a23c;
+        background-color: #e6a23c;
+      }
+
+      &.record {
+        border: 1px solid #0cc3b4;
+        background-color: #0cc3b4;
+      }
+
+      &.weichat {
+        border: 1px solid #a532c6;
+        background-color: #a532c6;
+      }
+
+      &.refresh {
+        border: 1px solid #ec9c14;
+        background-color: #ec9c14;
+      }
+    }
+  }
+
+  /* 条件框 */
+  /* 列表框 */
+  .table-box {
+    width: 100%;
+    margin-bottom: 10px;
+
+    .el-table {
+      color: #97c1ff;
+
+      .is-checked {
+        .el-checkbox__inner {
+          background-color: #1890ff;
+          border-color: #1890ff;
+        }
+      }
+
+      .is-indeterminate {
+        .el-checkbox__inner {
+          background-color: #1890ff;
+          border-color: #1890ff;
+        }
+      }
+
+      .el-checkbox__inner {
+        width: 19px;
+        height: 19px;
+        border: 1px solid #3682c8;
+        background: transparent;
+      }
+
+      .el-checkbox__inner::before {
+        height: 4px;
+        top: 7px;
+      }
+
+      .el-checkbox__inner::after {
+        height: 10px;
+        left: 7px;
+        top: 2px;
+      }
+
+      /* 标题 */
+      .el-table__header-wrapper {
+        th {
+          color: #97c1ff;
+          border-bottom: 1px solid #333969;
+          background: #333969;
+        }
+      }
+
+      /* 内容 */
+      .el-table__row,
+      .hover-row {
+        td {
+          border-bottom: 1px solid #202342;
+          background: #222a59;
+        }
+
+        /* hover高亮 */
+        tr:hover>td {
+          background: #222a59;
+        }
+      }
+    }
+
+    .el-table::before {
+      background-color: #1c335f;
+    }
+
+    .el-table__fixed::before {
+      background-color: #1c335f;
+    }
+  }
+
+  .pagination-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  /* 列表框 */
+
+  /* 重点客户 */
+  &.keyCustom {
+    .keyCustom-dialog {
+      .dialog-content {
+        height: 420px;
+        background: #30334f;
+
+        .scroll {
+          padding: 15px 0;
+        }
+
+        >.el-scrollbar {
+          height: 100%;
+
+          .el-scrollbar__wrap {
+            overflow-x: hidden;
+            overflow-y: scroll;
+          }
+
+          .el-scrollbar__bar {
+            &.is-vertical {
+              width: 4px; // 滚动条宽度
+            }
+          }
+
+          .el-scrollbar__thumb {
+            background-color: #4c79eb; // 可设置滚动条颜色
+          }
+        }
+      }
+
+      .keyCustom-form {
+        padding: 0px 20px 0 15px !important;
+
+        .el-form-item {
+          display: flex;
+        }
+
+        .el-select {
+          width: 100%;
+        }
+
+        .equipment-title {
+          margin-top: 20px;
+          padding-left: 20px;
+          text-align: left;
+          font-size: 14px;
+          font-weight: bold;
+          color: #fff;
+        }
+
+        .equipment-container {
+          width: 100%;
+          height: 100%;
+          margin-left: 20px;
+
+          .equip {
+            margin-top: 10px;
+
+            .title {
+              margin-top: 16px;
+              color: #97c1ff;
+              font-weight: normal;
+              text-align: left;
+            }
+
+            .list {
+              display: flex;
+              flex-wrap: wrap;
+
+              .item {
+                flex: 0 0 16%;
+                margin-top: 10px;
+
+                .text {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  width: 140px;
+                  height: 60px;
+                  color: #fff;
+                  background: #202342;
+                  border-radius: 5px;
+                  border: solid 1px #38408c;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* 重点客户 */
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 0px;
+    border-radius: 4px;
+    background-color: #c0c0c0;
+  }
+
+  /*定义滚动条轨道 内阴影+圆角*/
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #21345f;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #4c79eb;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #287bbb;
+  }
+}

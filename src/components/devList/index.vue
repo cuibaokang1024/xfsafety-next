@@ -1,6 +1,6 @@
 <template>
   <el-dialog class="devList" :visible.sync="dialogVisible" width="800px">
-    <div slot="title" class="dialog-title">{{ '设备列表' }}</div>
+    <div name="title" class="dialog-title">{{ '设备列表' }}</div>
     <div class="dialog-content">
       <div class="devList">
         <ul>
@@ -20,7 +20,7 @@
         </ul>
       </div>
     </div>
-    <div slot="footer" class="dialog-footer">
+    <div name="footer" class="dialog-footer">
       <el-button @click="hide()">关闭</el-button>
     </div>
   </el-dialog>

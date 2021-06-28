@@ -453,7 +453,7 @@ import NumberRoll from '@/components/numberRoll'
 export default {
   name: 'DevItem',
   filters: {
-    getSignalClass(signal, type) {
+    getSignalClass (signal, type) {
       if (!signal) {
         return 'signal-0'
       }
@@ -488,7 +488,7 @@ export default {
       }
       return className
     },
-    getBatterylClass(num) {
+    getBatterylClass (num) {
       let className = ''
       if (num === 0) {
         className = 'battery-0'
@@ -510,7 +510,7 @@ export default {
       }
       return className
     },
-    devStatusClass(devStatus) {
+    devStatusClass (devStatus) {
       let className = ''
       if (devStatus === 1) {
         className = 'normal'
@@ -555,7 +555,7 @@ export default {
       default: false
     }
   },
-  data() {
+  data () {
     return {
       volume: 0,
       oldVolume: 0,
@@ -570,25 +570,25 @@ export default {
     * 判断电设备各参数是否报警
     * 0 电压 1 电流 2 剩余电流 3 电压
     */
-    isAlertVoltage() {
+    isAlertVoltage () {
       if (!has(this.devData, 'person.catAlert')) {
         return false
       }
       return this.devData.person.catAlert.includes(0)
     },
-    isAlertCurrent() {
+    isAlertCurrent () {
       if (!has(this.devData, 'person.catAlert')) {
         return false
       }
       return this.devData.person.catAlert.includes(1)
     },
-    isAlertTemperature() {
+    isAlertTemperature () {
       if (!has(this.devData, 'person.catAlert')) {
         return false
       }
       return this.devData.person.catAlert.includes(3)
     },
-    isAlertResidualCurrent() {
+    isAlertResidualCurrent () {
       if (!has(this.devData, 'person.catAlert')) {
         return false
       }
@@ -599,32 +599,32 @@ export default {
     * 0 电压 1 电流 2 剩余电流 3 电压
     */
 
-    maxVoltage() {
+    maxVoltage () {
       if (!has(this.devData, 'person.catData.0')) {
         return 0
       }
       return this.formatElectricValue(this.devData.person.catData[0])
     },
-    maxCurrent() {
+    maxCurrent () {
       if (!has(this.devData, 'person.catData.1')) {
         return 0
       }
       return this.formatElectricValue(this.devData.person.catData[1])
     },
-    maxTemperature() {
+    maxTemperature () {
       if (!has(this.devData, 'person.catData.2')) {
         return 0
       }
       return this.formatElectricValue(this.devData.person.catData[3])
     },
-    residualCurrent() {
+    residualCurrent () {
       if (!has(this.devData, 'person.catData.3')) {
         return 0
       }
       return this.formatElectricValue(this.devData.person.catData[2])
     }
   },
-  created() {
+  created () {
     if (this.devType === 3) {
       this.volume = this.devData.volume | 0
       if (this.devData.maniNum === 0 || this.devData.maniNum === 4) {
@@ -638,7 +638,7 @@ export default {
   },
   methods: {
     // 格式化电设备参数置
-    formatElectricValue(value) { // 限制超出三位小数保留三位
+    formatElectricValue (value) { // 限制超出三位小数保留三位
       const reg = /^(([^0][0-9]+|0)\.([0-9]{3,}))$/
       let data = Math.max.apply(Math, value)
       if (data && reg.test(data)) {
@@ -647,7 +647,7 @@ export default {
       return data
     },
     // 设置燃气设备音量
-    changeVolume(volume) {
+    changeVolume (volume) {
       this.oldVolume = this.devData.volume
       if (this.volumeLock) {
         this.volume = this.oldVolume
@@ -681,7 +681,7 @@ export default {
           this.volumeLock = false
         })
     },
-    changeManipulatorStatus(manipulatorStatus) {
+    changeManipulatorStatus (manipulatorStatus) {
       if (!this.lock) {
         this.newManipulatorStatus = manipulatorStatus
       }
@@ -691,7 +691,7 @@ export default {
     },
     // 设置燃气设备机械手状态
     changemaniNum: debounce(
-      function() {
+      function () {
         let operate = 0
         let msg = '关闭'
         if (this.newManipulatorStatus) {
@@ -726,14 +726,14 @@ export default {
       true
     ),
     // 查看详情
-    viewDetail(devData) {
+    viewDetail (devData) {
       this.$emit('viewDetail', devData)
     },
-    playVideo(data) {
+    playVideo (data) {
       this.$emit('playVideo', data)
     },
     // 查看报警记录
-    viewAlertRecord(type, id, location) {
+    viewAlertRecord (type, id, location) {
       if (type !== '') {
         this.$emit('viewAlertRecord', type, id, location)
       } else {
@@ -741,7 +741,7 @@ export default {
       }
     },
     // 查看防区
-    viewZone(account) {
+    viewZone (account) {
       this.$emit('viewZone', account)
     }
   }

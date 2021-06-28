@@ -4,7 +4,7 @@
       v-if="dialogVisible"
       class="hiddendangerstatus-dialog dark"
       title="查看隐患状态"
-      :visible.sync="dialogVisible"
+      v-model:visible="dialogVisible"
       width="1382px"
       :append-to-body="true"
     >
@@ -146,7 +146,7 @@
           </div>
         </el-steps>
       </div>
-      <span slot="footer" class="dialog-footer">
+      <span name="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">关 闭</el-button>
       </span>
     </el-dialog>
@@ -154,10 +154,10 @@
       v-if="auditDialogVisible"
       class="dark auditDialog"
       :destroy-on-close="true"
-      :visible.sync="auditDialogVisible"
+      v-model:visible="auditDialogVisible"
       width="400px"
     >
-      <div slot="title" class="dialog-title">审核隐患</div>
+      <div name="title" class="dialog-title">审核隐患</div>
       <div class="dialog-content">
         <el-form ref="form" :inline="true" :model="form">
           <el-form-item label="审核意见">
@@ -173,7 +173,7 @@
           </el-form-item>
         </el-form>
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="hideAudit">关 闭</el-button>
         <el-button :loading="auditLoading" @click="submitAudit">确定</el-button>
       </div>
@@ -202,7 +202,7 @@ export default {
       default: ''
     }
   },
-  data() {
+  data () {
     return {
       /* * 整改状态
        *   (status: 0未整改; 1整改中; 2待审核; 3审核通过; 4审核不通过; 5已存档)
@@ -256,7 +256,7 @@ export default {
     }
   },
   computed: {
-    dangerInfoList() {
+    dangerInfoList () {
       const length = this.dangerInfoData.length
       const list = this.dangerStaticData.slice()
       list.splice(0, length)
@@ -264,7 +264,7 @@ export default {
     }
   },
   methods: {
-    handlerIsLastItem(data) {
+    handlerIsLastItem (data) {
       const index = this.dangerInfoData.findIndex(item => {
         return item.id === data.id
       })
@@ -274,13 +274,13 @@ export default {
         return true
       }
     },
-    handlerShow() {
+    handlerShow () {
       this.dialogVisible = true
     },
-    handlerHide() {
+    handlerHide () {
       this.dialogVisible = false
     },
-    replaceStr(data) {
+    replaceStr (data) {
       let string = ''
       try {
         string = data.replace(/\r\n/g, '<br>')
@@ -290,17 +290,17 @@ export default {
       }
       return string
     },
-    handlerAuditOK(id) {
+    handlerAuditOK (id) {
       this.dangerId = id
       this.auditDialogVisible = true
       this.auditStatus = 'ok'
     },
-    handlerAuditNO(id) {
+    handlerAuditNO (id) {
       this.dangerId = id
       this.auditDialogVisible = true
       this.auditStatus = 'no'
     },
-    submitAudit() {
+    submitAudit () {
       if (this.auditStatus === 'ok') {
         this.auditLoading = true
         auditOK({ ...this.form, id: this.dangerId })
@@ -337,7 +337,7 @@ export default {
           })
       }
     },
-    hideAudit() {
+    hideAudit () {
       this.dangerId = ''
       this.form = {
         content: '',
@@ -345,10 +345,10 @@ export default {
       }
       this.auditDialogVisible = false
     },
-    handleOpenViewer() {
+    handleOpenViewer () {
       this.showViewer = true
     },
-    handleCloseViewer() {
+    handleCloseViewer () {
       this.showViewer = false
     }
   }
@@ -366,4 +366,3 @@ export default {
   }
 }
 </style>
-

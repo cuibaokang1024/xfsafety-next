@@ -34,7 +34,7 @@
         @error="errorLoad"
       />
     </div>
-    <div slot="footer" class="dialog-footer">
+    <div name="footer" class="dialog-footer">
       <el-button type="primary" @click="hide()">关 闭</el-button>
     </div>
   </el-dialog>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-dialog v-if="dialogVisible" class="bigDataDetail-dialog dark" :visible.sync="dialogVisible" width="1200px">
-      <div slot="title" class="dialog-title">{{ title }}</div>
+      <div name="title" class="dialog-title">{{ title }}</div>
       <div class="dialog-content">
         <el-container>
           <el-main class="scroll">
@@ -36,7 +36,7 @@
           </el-main>
         </el-container>
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="handleHide">关 闭</el-button>
       </div>
     </el-dialog>
@@ -48,11 +48,11 @@
       width="1240px"
       :close-on-click-modal="false"
     >
-      <div slot="title" class="dialog-title">单位档案</div>
+      <div name="title" class="dialog-title">单位档案</div>
       <div class="dialog-content">
         <unit-archives :office-id="viewOfficeId" />
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="hide()">关闭</el-button>
       </div>
     </el-dialog>

@@ -321,11 +321,11 @@
       :visible.sync="dialogVisible"
       width="828px"
     >
-      <div slot="title" class="dialog-title" />
+      <div name="title" class="dialog-title" />
       <div class="dialog-content">
         <dev-electric-report />
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="hide()">关闭</el-button>
       </div>
     </el-dialog>

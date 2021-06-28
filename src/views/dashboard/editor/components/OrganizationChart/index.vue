@@ -5,7 +5,7 @@
       :datasource="organChartData"
       @node-click="handlerOrganizationNodeClick"
     >
-      <template slot-scope="{ nodeData }">
+      <template v-slot="{ nodeData }">
         <el-popover
           popper-class="popover-content"
           placement="top-start"
@@ -14,7 +14,7 @@
           :disabled="nodeData.icon ? true : false"
           :content="'职责：' + (nodeData.deptDuty || '暂无')"
         >
-          <div slot="reference" class="node-container">
+          <div name="reference" class="node-container">
             <div class="node-bot">
               <div v-if="!nodeData.icon" class="node-title">
                 <div class="node-officename">
@@ -61,7 +61,7 @@ export default {
       default: () => {}
     }
   },
-  data() {
+  data () {
     return {
       disabled: true,
       popoverStatus: false,
@@ -69,7 +69,7 @@ export default {
     }
   },
   watch: {
-    orgData(newVal) {
+    orgData (newVal) {
       const orgData = newVal
       let childList = []
       if (orgData.tree.length) {
@@ -114,10 +114,10 @@ export default {
     }
   },
   methods: {
-    handlerOrganizationNodeClick(nodeData) {
+    handlerOrganizationNodeClick (nodeData) {
       this.$emit('handlerOrganizationNodeClick', nodeData)
     },
-    handlerLinkOrgView() {
+    handlerLinkOrgView () {
       this.$emit('handlerLinkOrgView')
     }
   }

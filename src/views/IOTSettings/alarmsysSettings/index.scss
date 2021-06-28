@@ -1,0 +1,42 @@
+.keyPartMonitor-form {
+  .scroll {
+    height: 540px;
+
+    >.el-scrollbar {
+      height: 100%;
+
+      .el-scrollbar__wrap {
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+
+      .el-scrollbar__bar {
+        &.is-vertical {
+          width: 4px; // 滚动条宽度
+        }
+      }
+
+      .el-scrollbar__thumb {
+        background-color: #4c79eb; // 可设置滚动条颜色
+      }
+    }
+  }
+
+  .el-form{
+    padding: 10px 10px 10px 0 !important; 
+  }
+
+  .devList {
+    margin-top: 10px;
+
+    .el-table__header-wrapper {
+      .cell {
+        padding-left: 15px;
+      }
+    }
+
+    .el-form-item__content {
+      width: 100% !important;
+    }
+  }
+}

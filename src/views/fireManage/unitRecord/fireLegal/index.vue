@@ -7,7 +7,7 @@
     <!-- 搜索框 -->
     <!-- 条件框 -->
     <div class="filter-box">
-      <el-button class="add" @click="handleCreate('新增')">添加</el-button>
+      <el-button class="add" @click="create('新增')">添加</el-button>
     </div>
     <!-- 条件框 -->
     <!-- 列表框 -->
@@ -19,11 +19,14 @@
         :border="false"
         :sort="true"
         :max-height="'100%'"
-        @sortChange="sortChange"
         @rowClick="handleView($event, '查看')"
         @handleSelectionChange="handleSelectionChange"
       >
-        <el-table-column label="操作" align="left" class-name="small-padding fixed-width">
+        <el-table-column
+          label="操作"
+          align="left"
+          class-name="small-padding fixed-width"
+        >
           <template v-slot="{ row }">
             <el-tooltip content="修改" placement="top">
               <el-button
@@ -47,7 +50,7 @@
     </div>
     <div class="pagination-box">
       <pagination
-        v-show="total>0"
+        v-show="total > 0"
         :total="total"
         v-model:page="listQuery.page"
         v-model:limit="listQuery.pageSize"
@@ -67,6 +70,19 @@
         @updateData="updateData"
         @formHide="formHide"
       >
+        <template v-slot:uploadFile>
+          <upload-file
+            ref="upload-file"
+            :limit="1"
+            :is-download="true"
+            accept=".doc,.docx,.pdf,.ppt,.pptx,.xls,.xlsx,.txt"
+            :file-size="10"
+            :file-list="fileList"
+            @uploadSuccess="uploadSuccess"
+            @addDeleteFileList="addDeleteFileList"
+            @removeFile="removeFile"
+          />
+        </template>
       </BaseForm>
     </div>
     <!-- 弹出框 -->
@@ -74,7 +90,7 @@
 </template>
 
 <script>
-
+import formAction from '@/mixins/form.js'
 import {
   getLegalDocList,
   getLegaldocInfo,
@@ -84,13 +100,13 @@ import {
   saveLegaldoc
 } from '@/api/office'
 
-import '@/styles/list.scss'
-
+import '../style/supervisionUnit.scss'
+import { mapState } from 'vuex'
 import SearchForm from '@/components/searchForm'
 import BaseTable from '@/components/baseTable'
 import Pagination from '@/components/Pagination'
 import BaseForm from '@/components/baseForm'
-// import UploadFile from '@/components/uploadFile'
+import UploadFile from '@/components/uploadFile'
 
 export default {
   /* 消防合法文书 */
@@ -99,10 +115,10 @@ export default {
     SearchForm,
     BaseTable,
     Pagination,
-    BaseForm
-    // UploadFile
+    BaseForm,
+    UploadFile
   },
-
+  mixins: [formAction],
   data () {
     var numCheck = (rule, value, callback) => {
       if (this.deleteFileList.length > 0) {
@@ -152,13 +168,17 @@ export default {
           prop: 'officeName',
           label: '机构名称',
           align: 'left',
-          width: '',
-          sortable: 'custom',
-          'class-name': 'AAA'
+          width: ''
         },
         {
           prop: 'docTypeName',
           label: '消防合法文书类型',
+          align: 'left',
+          width: ''
+        },
+        {
+          prop: 'remarks',
+          label: '备注',
           align: 'left',
           width: ''
         }
@@ -180,6 +200,12 @@ export default {
             treeSelectOption: {
               name: 'officeName'
             }
+          },
+          {
+            label: '备注:',
+            name: 'remarks',
+            type: 'input',
+            labelWidth: '140px'
           },
           {
             type: 'slot',
@@ -207,24 +233,17 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapState({
+      officeName: (state) => state.user.officeName,
+      officeId: (state) => state.user.officeId
+    })
+  },
   created () {
     this._getDict()
     this._getLegalDocList()
   },
   methods: {
-    // 排序
-    sortChange (column) {
-      var order = 'asc'
-      if (column.order === 'descending') {
-        order = 'desc'
-      }
-      this.listQuery = Object.assign({}, this.listQuery, {
-        sidx: column.prop,
-        order: order
-      })
-      // eslint-disable-next-line no-sequences
-      this._getLegalDocList()
-    },
     // 查询函数
     async handleFilter (data) {
       this.listQuery = { ...this.listQuery, ...data }
@@ -234,7 +253,7 @@ export default {
     _getDict () {
       getDict({
         type: 'sys_legal_doc_type'
-      }).then(res => {
+      }).then((res) => {
         if (res.data) {
           this.searchFormOption.config[0].dataList = res.data.dicts
           this.formOption.config[0].dataList = res.data.dicts
@@ -243,7 +262,7 @@ export default {
     },
     // 获取列表
     _getLegalDocList () {
-      getLegalDocList(this.listQuery).then(res => {
+      getLegalDocList(this.listQuery).then((res) => {
         if (res.data) {
           this.list = res.data.list
           this.total = res.data.totalCount
@@ -254,17 +273,27 @@ export default {
     _getListInfo (data) {
       return new Promise((resolve, reject) => {
         getLegaldocInfo({ id: data.id })
-          .then(res => {
+          .then((res) => {
             if (res.data) {
-              this.fileList = res.data.legalDoc.files.map(item => {
+              this.fileList = res.data.legalDoc.files.map((item) => {
                 return { ...item }
               })
               resolve(res.data.legalDoc)
             }
           })
-          .catch(error => {
+          .catch((error) => {
             reject(error)
           })
+      })
+    },
+    create (params) {
+      this.disabled = false
+      this.fileList = []
+      this.qrfileList = []
+      const operationStatus = 'create'
+      this.formAction(params, operationStatus, {
+        officeId: this.officeId,
+        officeName: this.officeName
       })
     },
     // 新增数据
@@ -275,7 +304,7 @@ export default {
       if (this.deleteFileList.length > 0) {
         this._deletedFile()
       }
-      saveLegaldoc(formData).then(res => {
+      saveLegaldoc(formData).then((res) => {
         if (res.msg === 'ok') {
           this.resFlag = true // 连续添加成功或失败标志
           this._getLegalDocList()
@@ -303,7 +332,7 @@ export default {
         files: this.files,
         id: this.id
       })
-      updateLegaldoc(formData).then(res => {
+      updateLegaldoc(formData).then((res) => {
         if (res.msg === 'ok') {
           this._getLegalDocList()
           this.$message({
@@ -322,13 +351,13 @@ export default {
     deleteData (data) {
       let list = []
       if (Array.isArray(data)) {
-        data.forEach(item => {
+        data.forEach((item) => {
           list.push(item.id)
         })
       } else {
         list = [data.id]
       }
-      legaldocDelete(list).then(res => {
+      legaldocDelete(list).then((res) => {
         if (res.msg === 'ok') {
           this.$message({
             type: 'success',

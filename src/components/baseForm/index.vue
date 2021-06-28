@@ -10,7 +10,7 @@
     :height="height"
     @close="close"
   >
-    <div slot="title" class="dialog-title">{{ formOption.title }}</div>
+    <div name="title" class="dialog-title">{{ formOption.title }}</div>
     <div
       ref="content"
       v-loading="formLoading"
@@ -42,7 +42,7 @@
         <slot />
       </el-form>
     </div>
-    <div slot="footer" class="dialog-footer">
+    <div name="footer" class="dialog-footer">
       <el-row v-if="additionStatus">
         <el-checkbox v-model="additionValue">是否连续添加</el-checkbox>
       </el-row>

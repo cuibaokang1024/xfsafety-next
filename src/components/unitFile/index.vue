@@ -1,6 +1,6 @@
 <template>
-  <el-dialog :visible.sync="dialogVisible" style="" width="1000px">
-    <div slot="title" class="dialog-title">{{ unitData.name }}</div>
+  <el-dialog v-model:visible="dialogVisible" style="" width="1000px">
+    <div name="title" class="dialog-title">{{ unitData.name }}</div>
     <div class="dialog-content">
       <transition name="slide">
         <div v-show="!shouldShowView" class="unitInfo">
@@ -34,7 +34,7 @@
       </transition>
 
     </div>
-    <div slot="footer" class="dialog-footer">
+    <div name="footer" class="dialog-footer">
       <el-button @click="hide()">关 闭</el-button>
     </div>
   </el-dialog>
@@ -47,7 +47,7 @@ export default {
   components: {
     firePlan
   },
-  data() {
+  data () {
     return {
       dialogVisible: false,
       unitData: {
@@ -117,16 +117,16 @@ export default {
     }
   },
   methods: {
-    show() {
+    show () {
       this.dialogVisible = true
     },
-    hide() {
+    hide () {
       this.dialogVisible = false
     },
-    switchView(item) {
+    switchView (item) {
       this.shouldShowView = item.component
     },
-    back() {
+    back () {
       this.shouldShowView = ''
     }
   }

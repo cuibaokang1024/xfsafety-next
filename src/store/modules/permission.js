@@ -1,6 +1,6 @@
 import { constantRoutes } from '@/router'
 import { getRouteList } from '@/api/route'
-import router from './router'
+
 // import mapRouter from '@/utils/mapping'
 /**
  * Use meta.role to determine if the current user has permission
@@ -14,22 +14,6 @@ import router from './router'
  * @param roles
  */
 
-function mapRouter (routers) {
-  return routers.filter(itemRouter => {
-    if (itemRouter.component !== 'Layout') {
-      router.addRoute('BasicLayout', {
-        ...itemRouter,
-        component: (resolve) => require([`@/${itemRouter.component}`], resolve)
-
-      })
-    }
-    // 是否存在子集
-    if (itemRouter.children && itemRouter.children.length) {
-      mapRouter(itemRouter.children)
-    }
-    return true
-  })
-}
 const state = {
   routes: [],
   addRoutes: [],
@@ -69,7 +53,7 @@ const actions = {
               return item
             }
           })
-          const accessedRoutes = mapRouter(route)
+          const accessedRoutes = route
           commit('SET_ROUTES', accessedRoutes)
           resolve(accessedRoutes)
         }

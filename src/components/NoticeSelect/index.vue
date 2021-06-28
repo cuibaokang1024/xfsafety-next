@@ -7,11 +7,11 @@
     </div>
     <el-dialog
       class="dark noticeSelect-dialog"
-      :visible.sync="dialogUserVisible"
+      v-model:visible="dialogUserVisible"
       append-to-body
       width="1200px"
     >
-      <div slot="title" class="dialog-title">人员选择</div>
+      <div name="title" class="dialog-title">人员选择</div>
       <div class="dialog-content">
         <el-container>
           <el-aside class="noticeSelect-left">
@@ -45,7 +45,7 @@
           </el-aside>
         </el-container>
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="handleHide()">关 闭</el-button>
         <el-button type="primary" @click="handleSubmit()">确 定</el-button>
       </div>
@@ -79,7 +79,7 @@ export default {
       default: ''
     }
   },
-  data() {
+  data () {
     return {
       dialogUserVisible: false,
       listLoading: true,
@@ -105,7 +105,7 @@ export default {
       treeData: []
     }
   },
-  created() {
+  created () {
     const userNameList = this.label.split(',')
     if (Array.isArray(this.value)) {
       this.selectedList = this.value
@@ -125,18 +125,18 @@ export default {
   },
   methods: {
     // 获取tree
-    _handleOfficeOanotifyTree() {
+    _handleOfficeOanotifyTree () {
       handleOfficeOanotifyTree().then(res => {
         this.treeData = res.data
       })
     },
     // 树状方法
-    handleNodeClick(data, node) {
+    handleNodeClick (data, node) {
       this.listQuery.id = data.id
       this._handleOfficeOanotifyUser()
     },
     // 列表
-    _handleOfficeOanotifyUser() {
+    _handleOfficeOanotifyUser () {
       handleOfficeOanotifyUser(this.listQuery).then(res => {
         this.total = res.data.totalCount
         this.userList = res.data
@@ -145,7 +145,7 @@ export default {
         })
       })
     },
-    handleArrToStr(arr, obj) {
+    handleArrToStr (arr, obj) {
       let str = ''
       if (arr && arr.length > 0) {
         arr.forEach(item => {
@@ -159,14 +159,14 @@ export default {
       }
       return str
     },
-    handleShow() {
+    handleShow () {
       this.dialogUserVisible = true
       this._handleOfficeOanotifyUser()
     },
-    handleHide() {
+    handleHide () {
       this.dialogUserVisible = false
     },
-    select(selection, row) {
+    select (selection, row) {
       const index = this.selectedList.findIndex(item => {
         return item.id === row.id
       })
@@ -176,8 +176,8 @@ export default {
         this.selectedList.splice(index, 1)
       }
     },
-    selectAll() {},
-    delSelected(user) {
+    selectAll () {},
+    delSelected (user) {
       const index_userList = this.userList.findIndex(item => {
         return item.id === user.id
       })
@@ -190,7 +190,7 @@ export default {
       }
     },
     // 回显选中项
-    selectInitVal() {
+    selectInitVal () {
       if (this.value) {
         if (this.userList.length > 0) {
           this.$refs.BaseTable.clearSelection()
@@ -205,10 +205,10 @@ export default {
         }
       }
     },
-    getSelectedUser() {
+    getSelectedUser () {
       return this.selectedList
     },
-    handleSubmit() {
+    handleSubmit () {
       const id = this.handleArrToStr(this.selectedList, 'id').split(',')
       const label = this.handleArrToStr(this.selectedList, 'label')
       this.$emit('update:value', id)

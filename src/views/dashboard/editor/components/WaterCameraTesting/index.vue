@@ -64,17 +64,17 @@ export default {
     PieChart,
     AccessCover
   },
-  data() {
+  data () {
     return {
       iotData: {}
     }
   },
   computed: {
     // 是否显示接入与未接入画面 0为未接入 1为接入
-    accessWaterStatus() {
+    accessWaterStatus () {
       return !(this.iotData.water <= 0)
     },
-    waterPieData() {
+    waterPieData () {
       const waterPieData = {
         unit: '套，约占',
         tooltip: {
@@ -125,30 +125,30 @@ export default {
       return waterPieData
     }
   },
-  created() {
+  created () {
     this._handlerOfficeHomeIotData()
   },
   methods: {
-    _handlerOfficeHomeIotData() {
+    _handlerOfficeHomeIotData () {
       handlerOfficeHomeIotData().then(res => {
         if (res.data) {
           this.iotData = res.data.info
         }
       })
     },
-    handleClickInfo(status) {
+    handleClickInfo (status) {
       if (status === 0) {
         if (!this.accessWaterStatus) {
           return this.$router.push('/dashboard/editor/accessWater')
         }
       }
     },
-    handlerLinkWater() {
+    handlerLinkWater () {
       sessionStorage.setItem('filterRouteId', 10002)
       store.dispatch('permission/filterRoutes', 10002)
       this.$router.push('/IOT/waterEquipmentAll')
     },
-    handlerLinkCamera() {
+    handlerLinkCamera () {
       sessionStorage.setItem('filterRouteId', 10002)
       store.dispatch('permission/filterRoutes', 10002)
       this.$router.push('/IOT/cameraEquipmentAll')

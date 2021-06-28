@@ -9,7 +9,7 @@
         v-if="OrgData"
         ref="OrgChart"
         height="100%"
-        :org-data.sync="OrgData"
+        v-model:org-data="OrgData"
         @handlerPlusNodeOrg="handlerPlusNodeOrg"
         @handlerMinusNodeOrg="handlerMinusNodeOrg"
       />
@@ -26,37 +26,37 @@ export default {
   components: {
     OrganizationChart
   },
-  data() {
+  data () {
     return {
       saveStatus: false,
       OrgData: null
     }
   },
-  created() {
+  created () {
     this._handlerOfficeOrg()
   },
   methods: {
-    _handlerOfficeOrg() {
+    _handlerOfficeOrg () {
       handlerOfficeOrg().then(res => {
         this.OrgData = res.data
       })
     },
-    handlerEditView() {
+    handlerEditView () {
       this.saveStatus = true
       this.$refs.OrgChart.handlerEdit()
     },
-    handlerSaveView() {
+    handlerSaveView () {
       this.saveStatus = false
       this.$refs.OrgChart.handlerSave()
     },
-    handlerPlusNodeOrg(nodeData) {
+    handlerPlusNodeOrg (nodeData) {
       if (nodeData.id === 2) {
         this.OrgData.deptList[0].children.push({})
       } else {
         this.handlerAddOrgChart(this.OrgData.deptList[0].children, nodeData.id)
       }
     },
-    handlerAddOrgChart(data, id) {
+    handlerAddOrgChart (data, id) {
       data.forEach((item, index) => {
         if (item.id === id) {
           if (item.children) {
@@ -67,7 +67,7 @@ export default {
         }
       })
     },
-    handlerDeleteOrgChart(data, id) {
+    handlerDeleteOrgChart (data, id) {
       data.forEach((item, index) => {
         if (item.id === id) {
           data.splice(index, 1)
@@ -76,7 +76,7 @@ export default {
         }
       })
     },
-    handlerMinusNodeOrg(nodeData) {
+    handlerMinusNodeOrg (nodeData) {
       this.handlerDeleteOrgChart(
         this.OrgData.deptList[0].children,
         nodeData.id

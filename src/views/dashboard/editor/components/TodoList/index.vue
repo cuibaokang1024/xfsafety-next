@@ -34,7 +34,7 @@
             align="left"
             class-name="small-padding fixed-width"
           >
-            <template slot-scope="{ row }">
+            <template v-slot="{ row }">
               <span>{{ row.alertTime | parseTime("{h}:{i}:{s}") }}</span>
             </template>
           </el-table-column>
@@ -57,7 +57,7 @@
             align="center"
             class-name="small-padding fixed-width"
           >
-            <template slot-scope="{ row }">
+            <template v-slot="{ row }">
               <div class="rectification">
                 <span
                   class="rectification-text"
@@ -72,7 +72,7 @@
             align="left"
             class-name="small-padding fixed-width"
           >
-            <template slot-scope="{ row }">
+            <template v-slot="{ row }">
               <el-tooltip content="报警记录" placement="top">
                 <el-button
                   icon="el-icon-document"
@@ -99,15 +99,15 @@
       v-if="dialogEleVisible"
       class="electricDetail dark"
       :destroy-on-close="true"
-      :visible.sync="dialogEleVisible"
+      v-model:visible="dialogEleVisible"
       width="1160px"
       close="eleCloseDetail"
     >
-      <div slot="title" class="dialog-title">电设备详情</div>
+      <div name="title" class="dialog-title">电设备详情</div>
       <div class="dialog-content">
         <dev-electric-info ref="devDetail" :dev-data="devDataToView" :text-flag="false" />
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="eleHide()">关闭</el-button>
       </div>
     </el-dialog>
@@ -115,15 +115,15 @@
       v-if="dialogWaterVisible"
       class="waterDetail dark"
       :destroy-on-close="true"
-      :visible.sync="dialogWaterVisible"
+      v-model:visible="dialogWaterVisible"
       width="930px"
       close="waterCloseDetail"
     >
-      <div slot="title" class="dialog-title">水设备详情</div>
+      <div name="title" class="dialog-title">水设备详情</div>
       <div class="dialog-content">
         <dev-water-info ref="devDetail" :dev-data="devDataToView" />
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="waterHide()">关闭</el-button>
       </div>
     </el-dialog>
@@ -145,7 +145,7 @@ export default {
   // 隐患值守
   name: 'Danger',
   filters: {
-    devStatusClass(devStatus) {
+    devStatusClass (devStatus) {
       let className = ''
       if (devStatus === 0) {
         className = 'electric'
@@ -178,7 +178,7 @@ export default {
     DevElectricInfo,
     DevWaterInfo
   },
-  data() {
+  data () {
     return {
       listLoading: {
         category: null
@@ -246,7 +246,7 @@ export default {
     ...mapGetters(['alertMsgData'])
   },
   watch: {
-    alertMsgData(newVal) {
+    alertMsgData (newVal) {
       this.alertMsg = newVal
       this.allAlertList.unshift(this.alertMsg)
       const msgArr = this.alertMsg.title
@@ -261,11 +261,11 @@ export default {
       this.tableData.unshift(alertMsg)
     }
   },
-  created() {
+  created () {
     this._handlerStatusAlertRecord()
   },
   methods: {
-    _handlerStatusAlertRecord() {
+    _handlerStatusAlertRecord () {
       handlerStatusAlertRecord(this.listLoading).then((res) => {
         this.tableData = res.data
         res.data.forEach((item) => {
@@ -278,16 +278,16 @@ export default {
         })
       })
     },
-    handleSelectChange(index) {
+    handleSelectChange (index) {
       this.listLoading.category = index
       this._handlerStatusAlertRecord()
     },
-    handlerTablePlan(row) {
+    handlerTablePlan (row) {
       this.$nextTick(() => {
         this.$refs.AlarmAlert.handlerShow()
       })
     },
-    handleView(row) {
+    handleView (row) {
       console.log(row)
       if (row.category === 0) {
         this.devDataToView = { ...row, devid: row.devId }
@@ -296,11 +296,11 @@ export default {
         this.devDataToView = { ...row, devid: row.devId }
         this.dialogWaterVisible = true
       } else {
-        return
+
       }
     },
     // 查看报警信息
-    viewAlertDetail(id, model, url) {
+    viewAlertDetail (id, model, url) {
       this.isResetFlag = !this.isResetFlag
       this.viewDetailId = id
       this.viewDetailUrl = url
@@ -308,19 +308,19 @@ export default {
       this.$refs.alertDetail.show()
     },
     // 关闭设备详情页
-    eleCloseDetail() {
+    eleCloseDetail () {
       this.dialogEleVisible = false
     },
     // 关闭设备详情窗口
-    eleHide() {
+    eleHide () {
       this.dialogEleVisible = false
     },
     // 关闭设备详情页
-    waterCloseDetail() {
+    waterCloseDetail () {
       this.dialogWaterVisible = false
     },
     // 关闭设备详情窗口
-    waterHide() {
+    waterHide () {
       this.dialogWaterVisible = false
     }
   }

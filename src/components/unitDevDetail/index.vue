@@ -128,16 +128,16 @@
       class="dark"
       :class="category===0?'electricDetail':'waterDetail'"
       :destroy-on-close="true"
-      :visible.sync="dialogVisible"
+      v-model:visible="dialogVisible"
       :append-to-body="true"
       :width="category===0?'1160px':'930px'"
     >
-      <div slot="title" class="dialog-title">{{ category===0?'电设备详情':'水设备详情' }}</div>
+      <div name="title" class="dialog-title">{{ category===0?'电设备详情':'水设备详情' }}</div>
       <div class="dialog-content" style="height: 100%;">
         <dev-water-info v-if="category===1" ref="devDetail" :dev-data="devDataToView" />
         <dev-electric-info v-if="category===0" ref="devDetail" :dev-data="devDataToView" />
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="hide()">关 闭</el-button>
       </div>
     </el-dialog>
@@ -188,7 +188,7 @@ export default {
       default: true
     }
   },
-  data() {
+  data () {
     return {
       dialogVisible: false,
       isResetTableFlag: false,
@@ -294,12 +294,12 @@ export default {
       ]
     }
   },
-  created() {
+  created () {
     this._getOfficeDetail()
     this._getOfficeDevList()
   },
   methods: {
-    _getOfficeDetail() {
+    _getOfficeDetail () {
       getOfficeDetail({
         data: {
           officeId: this.officeId
@@ -315,7 +315,7 @@ export default {
         }
       })
     },
-    _getOfficeDevList() {
+    _getOfficeDevList () {
       getOfficeDevList({
         data: {
           officeId: this.officeId,
@@ -328,14 +328,14 @@ export default {
         }
       })
     },
-    switchDevStatus(value) {
+    switchDevStatus (value) {
       if (value) {
         this.devStatusVisible = value
         this._getOfficeDevList()
       }
     },
     // 打开报警记录页
-    viewAlertRecord(id, location, type) {
+    viewAlertRecord (id, location, type) {
       this.showAlarmRecordType = ''
       if (type) {
         this.showAlarmRecordType = type
@@ -346,21 +346,21 @@ export default {
       this.$refs.alertRecord.show()
     },
     // 打开设备详情页
-    viewDetail(data) {
+    viewDetail (data) {
       this.devDataToView = data
       this.dialogVisible = true
     },
     // 关闭设备详情窗口
-    hide() {
+    hide () {
       this.dialogVisible = false
     },
-    toggleBaseInfo() {
+    toggleBaseInfo () {
       this.isBaseInfoShow = !this.isBaseInfoShow
     },
-    toggleAlertList() {
+    toggleAlertList () {
       this.isAlertListShow = !this.isAlertListShow
     },
-    handlerCellClick(row, column, cell, event) {
+    handlerCellClick (row, column, cell, event) {
       if (column.property !== 'alertCount') {
         return
       }

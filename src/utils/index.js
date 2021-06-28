@@ -8,7 +8,7 @@
  * @param {string} cFormat
  * @returns {string}
  */
-export function parseTime (time, cFormat) {
+export function parseTime(time, cFormat) {
   if (arguments.length === 0) {
     return null
   }
@@ -34,7 +34,6 @@ export function parseTime (time, cFormat) {
     s: date.getSeconds(),
     a: date.getDay()
   }
-  // eslint-disable-next-line camelcase
   const time_str = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
     let value = formatObj[key]
     // Note: getDay() returns 0 on Sunday
@@ -46,7 +45,6 @@ export function parseTime (time, cFormat) {
     }
     return value || 0
   })
-  // eslint-disable-next-line camelcase
   return time_str
 }
 
@@ -55,7 +53,7 @@ export function parseTime (time, cFormat) {
  * @param {string} option
  * @returns {string}
  */
-export function formatTime (time, option) {
+export function formatTime(time, option) {
   if (('' + time).length === 10) {
     time = parseInt(time) * 1000
   } else {
@@ -97,7 +95,7 @@ export function formatTime (time, option) {
  * @param {string} url
  * @returns {Object}
  */
-export function getQueryObject (url) {
+export function getQueryObject(url) {
   url = url == null ? window.location.href : url
   const search = url.substring(url.lastIndexOf('?') + 1)
   const obj = {}
@@ -116,7 +114,7 @@ export function getQueryObject (url) {
  * @param {string} input value
  * @returns {number} output value
  */
-export function byteLength (str) {
+export function byteLength(str) {
   // returns the byte length of an utf8 string
   let s = str.length
   for (var i = str.length - 1; i >= 0; i--) {
@@ -132,7 +130,7 @@ export function byteLength (str) {
  * @param {Array} actual
  * @returns {Array}
  */
-export function cleanArray (actual) {
+export function cleanArray(actual) {
   const newArray = []
   for (let i = 0; i < actual.length; i++) {
     if (actual[i]) {
@@ -146,7 +144,7 @@ export function cleanArray (actual) {
  * @param {Object} json
  * @returns {Array}
  */
-export function param (json) {
+export function param(json) {
   if (!json) return ''
   return cleanArray(
     Object.keys(json).map(key => {
@@ -160,7 +158,7 @@ export function param (json) {
  * @param {string} url
  * @returns {Object}
  */
-export function param2Obj (url) {
+export function param2Obj(url) {
   const search = url.split('?')[1]
   if (!search) {
     return {}
@@ -180,7 +178,7 @@ export function param2Obj (url) {
  * @param {string} val
  * @returns {string}
  */
-export function html2Text (val) {
+export function html2Text(val) {
   const div = document.createElement('div')
   div.innerHTML = val
   return div.textContent || div.innerText
@@ -192,7 +190,7 @@ export function html2Text (val) {
  * @param {(Object|Array)} source
  * @returns {Object}
  */
-export function objectMerge (target, source) {
+export function objectMerge(target, source) {
   if (typeof target !== 'object') {
     target = {}
   }
@@ -214,7 +212,7 @@ export function objectMerge (target, source) {
  * @param {HTMLElement} element
  * @param {string} className
  */
-export function toggleClass (element, className) {
+export function toggleClass(element, className) {
   if (!element || !className) {
     return
   }
@@ -234,7 +232,7 @@ export function toggleClass (element, className) {
  * @param {string} type
  * @returns {Date}
  */
-export function getTime (type) {
+export function getTime(type) {
   if (type === 'start') {
     return new Date().getTime() - 3600 * 1000 * 24 * 90
   } else {
@@ -249,10 +247,10 @@ export function getTime (type) {
  * @param {boolean} immediate true 表立即执行，false 表非立即执行
  * @return {*}
  */
-export function debounce (func, wait, immediate) {
+export function debounce(func, wait, immediate) {
   let timeout, args, context, timestamp, result
 
-  const later = function () {
+  const later = function() {
     // 据上一次触发时间间隔
     const last = +new Date() - timestamp
 
@@ -269,7 +267,7 @@ export function debounce (func, wait, immediate) {
     }
   }
 
-  return function (...args) {
+  return function(...args) {
     context = this
     timestamp = +new Date()
     const callNow = immediate && !timeout
@@ -290,16 +288,15 @@ export function debounce (func, wait, immediate) {
  * @param wait 延迟执行毫秒数
  * @param type 1 表时间戳版，2 表定时器版
  */
-export function throttle (func, wait, type) {
+export function throttle(func, wait, type) {
   let previous
   let timeout
   if (type === 1) {
     previous = 0
   } else if (type === 2) {
-    // eslint-disable-next-line no-unused-expressions
     timeout
   }
-  return function () {
+  return function() {
     const context = this
     const args = arguments
     if (type === 1) {
@@ -326,7 +323,7 @@ export function throttle (func, wait, type) {
  * @param {Object} source
  * @returns {Object}
  */
-export function deepClone (source) {
+export function deepClone(source) {
   if (!source && typeof source !== 'object') {
     throw new Error('error arguments', 'deepClone')
   }
@@ -345,14 +342,14 @@ export function deepClone (source) {
  * @param {Array} arr
  * @returns {Array}
  */
-export function uniqueArr (arr) {
+export function uniqueArr(arr) {
   return Array.from(new Set(arr))
 }
 
 /**
  * @returns {string}
  */
-export function createUniqueString () {
+export function createUniqueString() {
   const timestamp = +new Date() + ''
   const randomNum = parseInt((1 + Math.random()) * 65536) + ''
   return (+(randomNum + timestamp)).toString(32)
@@ -364,7 +361,7 @@ export function createUniqueString () {
  * @param {string} cls
  * @returns {boolean}
  */
-export function hasClass (ele, cls) {
+export function hasClass(ele, cls) {
   return !!ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'))
 }
 
@@ -373,7 +370,7 @@ export function hasClass (ele, cls) {
  * @param {HTMLElement} elm
  * @param {string} cls
  */
-export function addClass (ele, cls) {
+export function addClass(ele, cls) {
   if (!hasClass(ele, cls)) ele.className += ' ' + cls
 }
 
@@ -382,19 +379,19 @@ export function addClass (ele, cls) {
  * @param {HTMLElement} elm
  * @param {string} cls
  */
-export function removeClass (ele, cls) {
+export function removeClass(ele, cls) {
   if (hasClass(ele, cls)) {
     const reg = new RegExp('(\\s|^)' + cls + '(\\s|$)')
     ele.className = ele.className.replace(reg, ' ')
   }
 }
 
-export function getLabel (ut) {
+export function getLabel(ut) {
   var label = {
     normal: {
       show: true,
       position: 'top',
-      formatter: function (data) {
+      formatter: function(data) {
         const dataColor = data.color
         const dataValue = data.value
         if (dataColor === '#ff0000' || dataColor === '#c23531') {
@@ -417,9 +414,8 @@ export function getLabel (ut) {
   return label
 }
 
-export function getDay (day) {
+export function getDay(day) {
   var today = new Date()
-  // eslint-disable-next-line camelcase
   var targetday_milliseconds = today.getTime() + 1000 * 60 * 60 * 24 * day
   today.setTime(targetday_milliseconds) // 注意，这行是关键代码
   var tMonth = today.getMonth()
@@ -429,7 +425,7 @@ export function getDay (day) {
   return `${tMonth}-${tDate}`
 }
 
-function doHandleMonth (month) {
+function doHandleMonth(month) {
   var m = month
 
   if (month.toString().length === 1) {
@@ -438,7 +434,7 @@ function doHandleMonth (month) {
   return m
 }
 
-export function isDot (num) {
+export function isDot(num) {
   const result = (num.toString()).indexOf('.')
   if (result !== -1) {
     return true
@@ -447,7 +443,7 @@ export function isDot (num) {
   }
 }
 
-export function isNumber (val) {
+export function isNumber(val) {
   // isNaN()函数 把空串 空格 以及NUll 按照0来处理 所以先去除，
   if (val === '' || val == null) {
     return false
@@ -460,7 +456,7 @@ export function isNumber (val) {
 }
 
 // 时间格式化
-function timeFormat (time) {
+function timeFormat(time) {
   if (parseInt(time) >= 10) {
     return time
   } else {
@@ -469,7 +465,7 @@ function timeFormat (time) {
 }
 
 // 计算时间差返回时分秒
-export function timeDifference (start, end) {
+export function timeDifference(start, end) {
   const stateDiff = new Date(start).getTime()
   const endDiff = new Date(end).getTime()
   const difftime = (endDiff - stateDiff) / 1000
@@ -486,7 +482,7 @@ export function timeDifference (start, end) {
 }
 
 // 返回时分秒
-export function hms (time) {
+export function hms(time) {
   const date = new Date(time)
   const hours = date.getHours()
   const minutes = date.getMinutes()
@@ -495,22 +491,22 @@ export function hms (time) {
 }
 
 // 只能输入数字
-export function onlyNumber (data) {
+export function onlyNumber(data) {
   return data.replace(/\D/g, '')
 }
 
 // 判断是否输入的都是数字
-export function isOnlyNumber (data) {
+export function isOnlyNumber(data) {
   return /\D/g.test(data)
 }
 
 // 最多保留两位有效数字
-export function upToTwoSignificantDigits (data) {
+export function upToTwoSignificantDigits(data) {
   return /^(([1-9]{1}\d*)|(0{1}))(\.\d{1,2})?$/.test(data)
 }
 
 // 联系电话校验，手机号和固定电话
-export function phoneAndTel (data) {
+export function phoneAndTel(data) {
   return /^((0\d{2,3}-\d{7,8})|(1[3567894]\d{9}))$/.test(data)
 }
 
@@ -519,7 +515,7 @@ export function phoneAndTel (data) {
 * @param {string}Date
 */
 
-export function handleInitMoment (date) {
+export function handleInitMoment(date) {
   const [hh = '0', mm = '0', ss = '0'] = (date || '0:0:0').split(':')
   const hour = parseInt(hh, 10) || 0
   const minute = parseInt(mm, 10) || 0
@@ -533,8 +529,8 @@ export function handleInitMoment (date) {
 * @param {string} attr
 */
 
-export function has (obj, key) {
-  return key.split('.').every(function (x) {
+export function has(obj, key) {
+  return key.split('.').every(function(x) {
     if (typeof obj !== 'object' || obj === null || !(x in obj)) { return false }
     obj = obj[x]
     return true

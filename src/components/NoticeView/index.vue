@@ -3,11 +3,11 @@
     <el-dialog
       v-if="dialogVisible"
       class="dark noticeView-dialog"
-      :visible.sync="dialogVisible"
+      v-model:visible="dialogVisible"
       append-to-body
       width="1000px"
     >
-      <div slot="title" class="dialog-title">查看</div>
+      <div name="title" class="dialog-title">查看</div>
       <div class="dialog-content">
         <el-scrollbar>
           <el-main>
@@ -93,7 +93,7 @@
                         @click="handleShowViewer"
                       >查看大图</span>
                     </div>
-                    <el-image-viewer
+                    <image-viewer
                       v-if="showViewer"
                       :on-close="handleHideViewer"
                       :url-list="showViewerList"
@@ -116,7 +116,7 @@
                         width="100"
                         class-name="small-padding fixed-width"
                       >
-                        <template slot-scope="{ row }">
+                        <template v-slot="{ row }">
                           <div
                             class="notice-icon"
                             :class="row.suffix | suffixClass"
@@ -129,7 +129,7 @@
                         width="100"
                         class-name="small-padding fixed-width"
                       >
-                        <template slot-scope="{ row }">
+                        <template v-slot="{ row }">
                           <div class="notice-down" @click="handleFileDown(row)">
                             下载
                           </div>
@@ -143,7 +143,7 @@
           </el-main>
         </el-scrollbar>
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
       </div>
     </el-dialog>
@@ -157,8 +157,8 @@ import { getDict, handleOfficeOanotifyDetail } from '@/api/companyHome'
 import BaseTable from '@/components/baseTable'
 import Consult from '@/components/Consult'
 import Swiper from 'swiper'
-import 'swiper/css/swiper.min.css'
-import ElImageViewer from 'element-ui/packages/image/src/image-viewer'
+import 'swiper/swiper.scss'
+import ImageViewer from 'element-plus'
 import download from '@/utils/fileDownload'
 import { handlerDownload } from '@/api/office'
 
@@ -167,10 +167,10 @@ export default {
   components: {
     BaseTable,
     Consult,
-    ElImageViewer
+    ImageViewer
   },
   filters: {
-    suffixClass(suffix) {
+    suffixClass (suffix) {
       let className = ''
       if (suffix === 'xls' || suffix === 'xlsx') {
         className = 'xls'
@@ -196,7 +196,7 @@ export default {
       default: 'issue'
     }
   },
-  data() {
+  data () {
     return {
       listLoading: false,
       dialogVisible: false,
@@ -248,14 +248,14 @@ export default {
     }
   },
   watch: {
-    viewId(newVal, oldVal) {
+    viewId (newVal, oldVal) {
       this._getDict()
       this._getListInfo(newVal)
     }
   },
   methods: {
     // 获取字典值
-    _getDict() {
+    _getDict () {
       getDict({
         type: 'oa_notify_type'
       }).then((res) => {
@@ -265,7 +265,7 @@ export default {
       })
     },
     // 详情信息
-    _getListInfo(id) {
+    _getListInfo (id) {
       return new Promise((resolve, reject) => {
         if (this.noticeFlag === 'issue') {
           this.read = ''
@@ -292,16 +292,16 @@ export default {
           })
       })
     },
-    handleInitConsult() {
+    handleInitConsult () {
       this.notifyId = this.formData.id
       this.$refs.Consult.handleShow()
     },
-    handleFileDown(data) {
+    handleFileDown (data) {
       handlerDownload({ fileId: data.fileId }).then((res) => {
         download(res.data, data.name)
       })
     },
-    handleShow() {
+    handleShow () {
       this.dialogVisible = true
       this.$nextTick(() => {
         new Swiper('.swiper-container', {
@@ -311,16 +311,16 @@ export default {
         })
       })
     },
-    handleHide() {
+    handleHide () {
       this.dialogVisible = false
     },
-    handleShowViewer() {
+    handleShowViewer () {
       this.showViewerList = this.imageList.map((item) => {
         return item.url
       })
       this.showViewer = true
     },
-    handleHideViewer() {
+    handleHideViewer () {
       this.showViewer = false
     }
   }

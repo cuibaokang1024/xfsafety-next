@@ -56,7 +56,7 @@ export default {
       default: ''
     }
   },
-  data() {
+  data () {
     return {
       chart: null,
       chartData: {},
@@ -64,12 +64,12 @@ export default {
       residenceType: 0
     }
   },
-  created() {
+  created () {
     this._getLevelbuildinginfo()
   },
-  mounted() {},
+  mounted () {},
   methods: {
-    _getLevelbuildinginfo() {
+    _getLevelbuildinginfo () {
       const info = {
         total: 7,
         secondLevel: 3,
@@ -97,7 +97,7 @@ export default {
         })
       }
     },
-    formatChartData(data) {
+    formatChartData (data) {
       const chartData = {
         colors: ['#1890ff', '#d99503', '#4da01f'],
         axisLabel: {
@@ -138,10 +138,10 @@ export default {
       }
       return chartData
     },
-    chartClick(data) {
+    chartClick (data) {
       this.buildingLevelSearch(data.data)
     },
-    buildingLevelSearch(data) {
+    buildingLevelSearch (data) {
       this.$emit('buildingLevelSearch', data)
     }
   }

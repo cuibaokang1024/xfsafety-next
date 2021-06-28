@@ -7,7 +7,7 @@
       :visible.sync="dialogVisible"
       width="1152px"
     >
-      <div slot="title" class="dialog-title">报警记录</div>
+      <div name="title" class="dialog-title">报警记录</div>
       <div ref="content" class="dialog-content">
         <ul class="tabs">
           <li
@@ -40,7 +40,7 @@
           </ul>
         </div>
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button type="primary" @click="hide()">关 闭</el-button>
       </div>
     </el-dialog>
@@ -53,12 +53,12 @@
       :append-to-body="true"
       :width="devType===0?'1160px':'930px'"
     >
-      <div slot="title" class="dialog-title">{{ devType===0?'电设备详情':'水设备详情' }}</div>
+      <div name="title" class="dialog-title">{{ devType===0?'电设备详情':'水设备详情' }}</div>
       <div class="dialog-content" style="height: 100%;">
         <dev-water-info v-if="devType===1" ref="devDetail" :dev-data="devDataToView" />
         <dev-electric-info v-if="devType===0" ref="devDetail" :dev-data="devDataToView" />
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="closeDevDetail()">关闭</el-button>
       </div>
     </el-dialog>

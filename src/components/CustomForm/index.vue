@@ -10,7 +10,7 @@
     :height="height"
     :close-on-click-modal="false"
   >
-    <div slot="title" class="dialog-title">{{ formModel.title }}</div>
+    <div name="title" class="dialog-title">{{ formModel.title }}</div>
     <div ref="content" class="dialog-content">
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane
@@ -36,7 +36,7 @@
         </el-tab-pane>
       </el-tabs>
     </div>
-    <div slot="footer" class="dialog-footer">
+    <div name="footer" class="dialog-footer">
       <el-button @click="handleHide()">关 闭</el-button>
     </div>
   </el-dialog>

@@ -24,7 +24,7 @@ export default {
       default: '240px'
     }
   },
-  data() {
+  data () {
     return {
       title: '',
       message: '',
@@ -33,8 +33,8 @@ export default {
   },
   watch: {
     swiperList: {
-      handler(newVal) {
-        this.$nextTick(function() {
+      handler (newVal) {
+        this.$nextTick(function () {
           this.title = this.swiperList[0].title
           this.link = this.swiperList[0].url
         })
@@ -43,13 +43,13 @@ export default {
     }
   },
   methods: {
-    handlerOnChange(index) {
+    handlerOnChange (index) {
       this.$nextTick(() => {
         this.title = this.swiperList[index].title
         this.link = this.swiperList[index].url
       })
     },
-    handlerGoLink() {
+    handlerGoLink () {
       window.open(this.link, '_blank')
     }
   }

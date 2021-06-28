@@ -22,7 +22,7 @@ export default {
   components: {
     AlertDetail
   },
-  data() {
+  data () {
     return {
       notifyList: [],
       alertData: {},
@@ -46,7 +46,7 @@ export default {
     ...mapGetters(['officeId', 'isSubscribeElectric'])
   },
   watch: {
-    isSubscribeElectric(newVal) {
+    isSubscribeElectric (newVal) {
       // 进入电设备页面订阅否则取消订阅
       if (newVal) {
         this.doSubscribe({
@@ -60,7 +60,7 @@ export default {
       }
     }
   },
-  created() {
+  created () {
     this.connection = Object.assign({}, MQTT_CONNECTION, {
       clientId: `mqtt_${idSeq}`
     }) // 每次生成一个新的clientId然后创建连接
@@ -82,13 +82,13 @@ export default {
     }
   },
 
-  destroyed() {
+  unmounted () {
     this.$notify.closeAll()
     this.destroyConnection()
   },
   methods: {
     // 创建mqtt连接
-    createConnection() {
+    createConnection () {
       const { host, port, endpoint, ...options } = this.connection
       const connectUrl = `ws://${host}:${port}${endpoint}`
       try {
@@ -123,7 +123,7 @@ export default {
       })
     },
     // 订阅主题
-    doSubscribe(subscription) {
+    doSubscribe (subscription) {
       const { topic, qos } = subscription
       this.client.subscribe(topic, { qos }, (error, res) => {
         if (error) {
@@ -134,7 +134,7 @@ export default {
       })
     },
     // 取消订阅
-    doUnSubscribe(subscription) {
+    doUnSubscribe (subscription) {
       const { topic } = subscription
       this.client.unsubscribe(topic, error => {
         if (error) {
@@ -145,7 +145,7 @@ export default {
       })
     },
     // 断开连接
-    destroyConnection() {
+    destroyConnection () {
       if (this.client.connected) {
         try {
           this.client.end()
@@ -159,7 +159,7 @@ export default {
       }
     },
     // 弹出报警信息
-    alertMsg(message) {
+    alertMsg (message) {
       this.$store.dispatch('device/changeAlertMsgData', message)
       if (!message) {
         this.$nextTick(() => {
@@ -212,12 +212,12 @@ export default {
         this.notifyList.push(notify)
       })
     },
-    closeMsg(data) {
+    closeMsg (data) {
       const index = this.alertList.findIndex(item => {
         return item.devId === data.devId
       })
       if (index === -1) {
-        return
+
       } else {
         this.alertList.splice(index, 1)
         this.notifyList[index].close()
@@ -228,7 +228,7 @@ export default {
       }
     },
     // 查看报警信息
-    viewAlertDetail(id, model, url) {
+    viewAlertDetail (id, model, url) {
       this.isResetFlag = !this.isResetFlag
       this.viewDetailId = id
       this.viewDetailUrl = url
@@ -236,7 +236,7 @@ export default {
       this.$refs.alertDetail.show()
     },
     // 语音播报的函数
-    handleSpeak(text) {
+    handleSpeak (text) {
       const msg = new SpeechSynthesisUtterance()
       msg.text = text // 文字内容
       msg.lang = 'zh-CN' // 使用的语言:中文
@@ -246,14 +246,14 @@ export default {
       synth.speak(msg) // 播放
     },
     // 语音停止
-    handleStop(e) {
+    handleStop (e) {
       const msg = new SpeechSynthesisUtterance()
       msg.text = e
       msg.lang = 'zh-CN'
       synth.cancel(msg)
     },
     // 创建报警内容
-    createdAlertHtml(alertData) {
+    createdAlertHtml (alertData) {
       return (
         <div v-show='false' ref='msgHtml' class='msg-wrapper'>
           <div class='content'>

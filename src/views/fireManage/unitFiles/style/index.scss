@@ -1,0 +1,36 @@
+.rulesForm {
+    flex: 1;
+    overflow: auto;
+  }
+  .formDialog .rulesForm > .el-form > .form-content {
+    border: none !important;
+    border-bottom: none !important;
+    border-right: none !important;
+    background: #112653;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  .formDialog .rulesForm > .el-form > .form-content .el-form-item {
+    border-bottom: none !important;
+    border-right: none !important;
+    padding-bottom: 0;
+    align-items: flex-start;
+    .el-form-item__content {
+      margin-left: 0 !important;
+    }
+    .img {
+      background: #2a3b66;
+      border-radius: 4px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+  }
+  .formDialog .rulesForm > .el-form .has-gutter {
+    background: #405074;
+  }
+  .formDialog .rulesForm > .el-form .el-table__row {
+      background: #2a3b66;
+  }

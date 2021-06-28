@@ -1,0 +1,1242 @@
+[
+    {
+        "path": "/bigData",
+        "component": "layout",
+        "hidden": 0,
+        "children": [
+            {
+                "path": "integratedReport",
+                "component": "integratedReport",
+                "hidden": 0,
+                "children": [
+                    {
+                        "path": "dangerTrend",
+                        "component": "dangerTrend",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "按月统计火灾隐患"
+                        },
+                        "name": "dangerTrend",
+                        "pid": "10038",
+                        "id": "101128",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "electricAlert",
+                        "component": "electricAlert",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "电气火灾隐患分析"
+                        },
+                        "name": "electricAlert",
+                        "pid": "10038",
+                        "id": "101135",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "fixedFireTrend",
+                        "component": "fixedFireTrend",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "固定消防设施报警分析"
+                        },
+                        "name": "fixedFireTrend",
+                        "pid": "10038",
+                        "id": "101130",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "sensorArea",
+                        "component": "sensorArea",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "按固定设施统计"
+                        },
+                        "name": "sensorArea",
+                        "pid": "10038",
+                        "id": "101124",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "achievement",
+                        "component": "achievement",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "单位消防安全评估成绩分析"
+                        },
+                        "name": "achievement",
+                        "pid": "10038",
+                        "id": "101134",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "enterpriseAsse",
+                        "component": "enterpriseAsse",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "单位消防安全评估报告"
+                        },
+                        "name": "enterpriseAsse",
+                        "pid": "10038",
+                        "id": "101136",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "personalFireSafety",
+                        "component": "personalFireSafety",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "个人消防安全评估报告"
+                        },
+                        "name": "personalFireSafety",
+                        "pid": "10038",
+                        "id": "101133",
+                        "type": 1,
+                        "alwaysShow": 0
+                    }
+                ],
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "综合报表分析"
+                },
+                "name": "integratedReport",
+                "pid": "10004",
+                "id": "10038",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "companyChk",
+                "component": "companyChk",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "单位履责分析"
+                },
+                "name": "companyChk",
+                "pid": "10004",
+                "id": "101139",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "rectifyList",
+                "component": "rectifyList",
+                "hidden": 0,
+                "children": [
+                    {
+                        "path": "rectifyDetail",
+                        "component": "rectifyDetail",
+                        "hidden": 1,
+                        "meta": {
+                            "invisibleTag": 1,
+                            "noCache": 1,
+                            "icon": "el-icon-help",
+                            "title": "隐患进度详情"
+                        },
+                        "name": "rectifyDetail",
+                        "pid": "101140",
+                        "id": "101220",
+                        "type": 1,
+                        "alwaysShow": 0
+                    }
+                ],
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "隐患整改进度"
+                },
+                "name": "rectifyList",
+                "pid": "10004",
+                "id": "101140",
+                "type": 1,
+                "alwaysShow": 0
+            }
+        ],
+        "meta": {
+            "invisibleTag": 0,
+            "noCache": 0,
+            "icon": "el-icon-help",
+            "title": "大数据"
+        },
+        "name": "BigData",
+        "pid": "10000",
+        "id": "10004",
+        "type": 1,
+        "alwaysShow": 0
+    },
+    {
+        "path": "/fireManage",
+        "component": "layout",
+        "hidden": 0,
+        "children": [
+            {
+                "path": "fireTrain",
+                "component": "fireTrain",
+                "hidden": 0,
+                "children": [
+                    {
+                        "path": "questionType",
+                        "component": "questionType",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 1,
+                            "icon": "el-icon-help",
+                            "title": "题库类型"
+                        },
+                        "name": "questionType",
+                        "pid": "101163",
+                        "id": "101200",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "choiceBank",
+                        "component": "choiceBank",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 1,
+                            "icon": "el-icon-help",
+                            "title": "单选题库"
+                        },
+                        "name": "choiceBank",
+                        "pid": "101163",
+                        "id": "101201",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "manyBank",
+                        "component": "manyBank",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 1,
+                            "icon": "el-icon-help",
+                            "title": "多选题库"
+                        },
+                        "name": "manyBank",
+                        "pid": "101163",
+                        "id": "101202",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "judgeBank",
+                        "component": "judgeBank",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 1,
+                            "icon": "el-icon-help",
+                            "title": "判断题库"
+                        },
+                        "name": "judgeBank",
+                        "pid": "101163",
+                        "id": "101203",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "testPaperDispose",
+                        "component": "TestPaperDispose",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 1,
+                            "icon": "el-icon-help",
+                            "title": "试卷配置"
+                        },
+                        "name": "testPaperDispose",
+                        "pid": "101163",
+                        "id": "101186",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "examination",
+                        "component": "examination",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 1,
+                            "icon": "el-icon-help",
+                            "title": "考试"
+                        },
+                        "name": "examination",
+                        "pid": "101163",
+                        "id": "101161",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "training",
+                        "component": "training",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 1,
+                            "icon": "el-icon-help",
+                            "title": "培训"
+                        },
+                        "name": "training",
+                        "pid": "101163",
+                        "id": "101162",
+                        "type": 1,
+                        "alwaysShow": 0
+                    }
+                ],
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "消防培训"
+                },
+                "name": "fireTrain",
+                "pid": "10003",
+                "id": "101163",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "notice",
+                "component": "notice",
+                "hidden": 0,
+                "children": [
+                    {
+                        "path": "receive",
+                        "component": "receive",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "接收"
+                        },
+                        "name": "receive",
+                        "pid": "10018",
+                        "id": "101184",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "issue",
+                        "component": "issue",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "下发"
+                        },
+                        "name": "issue",
+                        "pid": "10018",
+                        "id": "101185",
+                        "type": 1,
+                        "alwaysShow": 0
+                    }
+                ],
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "通知公告"
+                },
+                "name": "notice",
+                "pid": "10003",
+                "id": "10018",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "unitRecord",
+                "component": "unitRecord",
+                "hidden": 0,
+                "children": [
+                    {
+                        "path": "supervisionUnitRecord",
+                        "component": "supervisionUnitRecord",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "监管单位档案"
+                        },
+                        "name": "supervisionUnitRecord",
+                        "pid": "101142",
+                        "id": "101144",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "fireSecurity",
+                        "component": "fireSecurity",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "消防和安保设施录入"
+                        },
+                        "name": "fireSecurity",
+                        "pid": "101142",
+                        "id": "101178",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "fireLegal",
+                        "component": "fireLegal",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "消防合法文书"
+                        },
+                        "name": "fireLegal",
+                        "pid": "101142",
+                        "id": "101146",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "fireTraining",
+                        "component": "fireTraining",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "消防培训档案"
+                        },
+                        "name": "fireTraining",
+                        "pid": "101142",
+                        "id": "101147",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "firePlan",
+                        "component": "firePlan",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "消防预案和演练"
+                        },
+                        "name": "firePlan",
+                        "pid": "101142",
+                        "id": "101148",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "fireRule",
+                        "component": "fireRule",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "规章制度"
+                        },
+                        "name": "fireRule",
+                        "pid": "101142",
+                        "id": "101150",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "enterpriseUnitRecord",
+                        "component": "enterpriseUnitRecord",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "基本信息"
+                        },
+                        "name": "enterpriseUnitRecord",
+                        "pid": "101142",
+                        "id": "101151",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "buildingArea",
+                        "component": "buildingArea",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "建筑/区域管理"
+                        },
+                        "name": "buildingArea",
+                        "pid": "101142",
+                        "id": "101153",
+                        "type": 1,
+                        "alwaysShow": 0
+                    }
+                ],
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "单位档案"
+                },
+                "name": "unitRecord",
+                "pid": "10003",
+                "id": "101142",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "dangerManage",
+                "component": "dangerManage",
+                "hidden": 0,
+                "children": [
+                    {
+                        "path": "dangerWarehouse",
+                        "component": "dangerWarehouse",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "危化品出入库管理"
+                        },
+                        "name": "dangerWarehouse",
+                        "pid": "101177",
+                        "id": "101179",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "dangerDetail",
+                        "component": "dangerDetail",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "危化品明细"
+                        },
+                        "name": "dangerDetail",
+                        "pid": "101177",
+                        "id": "101180",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "dangerMethod",
+                        "component": "dangerMethod",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "危化品处置方法"
+                        },
+                        "name": "dangerMethod",
+                        "pid": "101177",
+                        "id": "101181",
+                        "type": 1,
+                        "alwaysShow": 0
+                    }
+                ],
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "危化品管理"
+                },
+                "name": "dangerManage",
+                "pid": "10003",
+                "id": "101177",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "fireInspection",
+                "component": "fireInspection",
+                "hidden": 0,
+                "children": [
+                    {
+                        "path": "inspectionPoint",
+                        "component": "inspectionPoint",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "巡查点"
+                        },
+                        "name": "inspectionPoint",
+                        "pid": "10020",
+                        "id": "10032",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "vuecustomer",
+                        "component": "vuecustomer",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 1,
+                            "icon": "el-icon-help",
+                            "title": "检查表定义"
+                        },
+                        "name": "vuecustomer",
+                        "pid": "10020",
+                        "id": "101217",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "Vue",
+                        "component": "vue",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 1,
+                            "icon": "el-icon-help",
+                            "title": "检查记录"
+                        },
+                        "name": "vue",
+                        "pid": "10020",
+                        "id": "101218",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "inspectionTask",
+                        "component": "inspectionTask",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "检查任务"
+                        },
+                        "name": "inspectionTask",
+                        "pid": "10020",
+                        "id": "10033",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "checkTrace",
+                        "component": "checkTrace",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "检查痕迹"
+                        },
+                        "name": "checkTrace",
+                        "pid": "10020",
+                        "id": "10034",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "dangerFile",
+                        "component": "dangerFile",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "隐患档案"
+                        },
+                        "name": "dangerFile",
+                        "pid": "10020",
+                        "id": "10035",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "plan",
+                        "component": "plan",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "平面图"
+                        },
+                        "name": "plan",
+                        "pid": "10020",
+                        "id": "10036",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "pointTypeSet",
+                        "component": "pointTypeSet",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "巡查点类型设置"
+                        },
+                        "name": "pointTypeSet",
+                        "pid": "10020",
+                        "id": "10037",
+                        "type": 1,
+                        "alwaysShow": 0
+                    }
+                ],
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "消防检查"
+                },
+                "name": "fireInspection",
+                "pid": "10003",
+                "id": "10020",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "safetyRecord",
+                "component": "safetyRecord",
+                "hidden": 0,
+                "children": [
+                    {
+                        "path": "enterpriseRecord",
+                        "component": "enterpriseRecord",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "一企一档"
+                        },
+                        "name": "enterpriseRecord",
+                        "pid": "10067",
+                        "id": "10068",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "buildingRecord",
+                        "component": "buildingRecord",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "一楼一档"
+                        },
+                        "name": "buildingRecord",
+                        "pid": "10067",
+                        "id": "10069",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "personRecord",
+                        "component": "personRecord",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "一人一档"
+                        },
+                        "name": "personRecord",
+                        "pid": "10067",
+                        "id": "10070",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "residenceRecord",
+                        "component": "residenceRecord",
+                        "hidden": 1,
+                        "meta": {
+                            "invisibleTag": 1,
+                            "noCache": 1,
+                            "icon": "el-icon-help",
+                            "title": "住宅管理"
+                        },
+                        "name": "residenceRecord",
+                        "pid": "10067",
+                        "id": "10077",
+                        "type": 1,
+                        "alwaysShow": 0
+                    }
+                ],
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "安全档案管理"
+                },
+                "name": "safetyRecord",
+                "pid": "10003",
+                "id": "10067",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "fireRescueDatabase",
+                "component": "fireRescueDatabase",
+                "hidden": 0,
+                "children": [
+                    {
+                        "path": "fireStation",
+                        "component": "materialRecord",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "微型消防站"
+                        },
+                        "name": "materialRecord",
+                        "pid": "10084",
+                        "id": "10088",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "rescueFood",
+                        "component": "materialRecord",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "救援食品"
+                        },
+                        "name": "materialRecord",
+                        "pid": "10084",
+                        "id": "10092",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "fireWater",
+                        "component": "materialRecord",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "消防水源"
+                        },
+                        "name": "materialRecord",
+                        "pid": "10084",
+                        "id": "10085",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "socialRescue",
+                        "component": "materialRecord",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "社会救援力量"
+                        },
+                        "name": "materialRecord",
+                        "pid": "10084",
+                        "id": "10089",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "fireAgent",
+                        "component": "materialRecord",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "灭火药剂"
+                        },
+                        "name": "materialRecord",
+                        "pid": "10084",
+                        "id": "10086",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "dangerousGood",
+                        "component": "materialRecord",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "危化品"
+                        },
+                        "name": "materialRecord",
+                        "pid": "10084",
+                        "id": "10090",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "specialVehicle",
+                        "component": "materialRecord",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "特种车辆"
+                        },
+                        "name": "materialRecord",
+                        "pid": "10084",
+                        "id": "10087",
+                        "type": 1,
+                        "alwaysShow": 0
+                    },
+                    {
+                        "path": "reliefMaterial",
+                        "component": "materialRecord",
+                        "hidden": 0,
+                        "meta": {
+                            "invisibleTag": 0,
+                            "noCache": 0,
+                            "icon": "el-icon-help",
+                            "title": "救援生活物资"
+                        },
+                        "name": "materialRecord",
+                        "pid": "10084",
+                        "id": "10091",
+                        "type": 1,
+                        "alwaysShow": 0
+                    }
+                ],
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "消防救援力量信息库"
+                },
+                "name": "fireRescueDatabase",
+                "pid": "10003",
+                "id": "10084",
+                "type": 1,
+                "alwaysShow": 0
+            }
+        ],
+        "meta": {
+            "invisibleTag": 0,
+            "noCache": 0,
+            "icon": "el-icon-help",
+            "title": "消防管理"
+        },
+        "name": "FireManage",
+        "pid": "10000",
+        "id": "10003",
+        "type": 1,
+        "alwaysShow": 0
+    },
+    {
+        "path": "/IOT",
+        "component": "layout",
+        "hidden": 0,
+        "children": [
+            {
+                "path": "electricEquipmentAll",
+                "component": "electricEquipmentAll",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "智慧用电监测"
+                },
+                "name": "electricEquipmentAll",
+                "pid": "10002",
+                "id": "10006",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "waterEquipmentAll",
+                "component": "waterEquipmentAll",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "智慧用水监测"
+                },
+                "name": "waterEquipmentAll",
+                "pid": "10002",
+                "id": "10007",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "smokeEquipmentAll",
+                "component": "smokeEquipmentAll",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "独立烟感预警"
+                },
+                "name": "smokeEquipmentAll",
+                "pid": "10002",
+                "id": "10008",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "cameraEquipmentAll",
+                "component": "cameraEquipmentAll",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "可视化监测"
+                },
+                "name": "cameraEquipmentAll",
+                "pid": "10002",
+                "id": "10009",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "gasEquipmentAll",
+                "component": "gasEquipmentAll",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "可燃气体预警"
+                },
+                "name": "gasEquipmentAll",
+                "pid": "10002",
+                "id": "10010",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "infotxOfficeList",
+                "component": "infotxOfficeList",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "火灾自动联网报警"
+                },
+                "name": "infotxOfficeList",
+                "pid": "10002",
+                "id": "10011",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "keyPartsMonitor",
+                "component": "keyPartsMonitor",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "重点部位监测"
+                },
+                "name": "keyPartsMonitor",
+                "pid": "10002",
+                "id": "10012",
+                "type": 1,
+                "alwaysShow": 0
+            }
+        ],
+        "meta": {
+            "invisibleTag": 0,
+            "noCache": 0,
+            "icon": "el-icon-help",
+            "title": "物联网"
+        },
+        "name": "IOT",
+        "pid": "10000",
+        "id": "10002",
+        "type": 1,
+        "alwaysShow": 0
+    },
+    {
+        "path": "/systemSetup",
+        "component": "layout",
+        "hidden": 0,
+        "children": [
+            {
+                "path": "userOffice",
+                "component": "userOffice",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "用户管理"
+                },
+                "name": "userOffice",
+                "pid": "10005",
+                "id": "101156",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "sysMenuManagement",
+                "component": "sysMenuManagement",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 1,
+                    "noCache": 1,
+                    "icon": "el-icon-help",
+                    "title": "个性化菜单"
+                },
+                "name": "sysMenuManagement",
+                "pid": "10005",
+                "id": "101189",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "departmentPersonnel",
+                "component": "departmentPersonnel",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 1,
+                    "icon": "el-icon-help",
+                    "title": "部门管理"
+                },
+                "name": "departmentPersonnel",
+                "pid": "10005",
+                "id": "101219",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "unitTypes",
+                "component": "unitTypes",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 1,
+                    "icon": "el-icon-document",
+                    "title": "监管单位类型"
+                },
+                "name": "unitTypes",
+                "pid": "10005",
+                "id": "101227",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "dangerType",
+                "component": "dangerType",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "危化品类型"
+                },
+                "name": "dangerType",
+                "pid": "10005",
+                "id": "101182",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "devElectricSet",
+                "component": "devElectricSet",
+                "hidden": 0,
+                "meta": {
+                    "invisibleTag": 0,
+                    "noCache": 0,
+                    "icon": "el-icon-help",
+                    "title": "消防电系统设置"
+                },
+                "name": "devElectricSet",
+                "pid": "10005",
+                "id": "10016",
+                "type": 1,
+                "alwaysShow": 0
+            },
+            {
+                "path": "roleManagement",
+                "component": "roleManagement",
+                "hidden": 0,
+                "meta": {
+                    "icon": "el-icon-help",
+                    "title": "角色管理"
+                },
+                "name": "roleManagement",
+                "pid": "10005",
+                "id": "101188",
+                "type": 1,
+                "alwaysShow": 0
+            }
+        ],
+        "meta": {
+            "invisibleTag": 0,
+            "noCache": 0,
+            "icon": "el-icon-help",
+            "title": "系统设置"
+        },
+        "name": "SystemSetup",
+        "pid": "10000",
+        "id": "10005",
+        "type": 1,
+        "alwaysShow": 0
+    }
+]

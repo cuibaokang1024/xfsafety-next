@@ -20,7 +20,7 @@
       :show-close="false"
       width="800px"
     >
-      <div slot="title" class="dialog-title">人员选择</div>
+      <div name="title" class="dialog-title">人员选择</div>
       <div class="dialog-content">
         <div
           v-loading="listLoading"
@@ -50,7 +50,7 @@
           </div>
         </div>
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="handleHide()">关 闭</el-button>
         <el-button type="primary" @click="handleSubmit()">确 定</el-button>
       </div>

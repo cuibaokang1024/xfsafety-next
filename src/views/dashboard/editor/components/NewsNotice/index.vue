@@ -62,7 +62,7 @@
         :visible.sync="dialogVisible"
         :destroy-on-close="true"
       >
-        <div slot="title" class="dialog-title">查看详情</div>
+        <div name="title" class="dialog-title">查看详情</div>
         <div class="dialog-content">
           <el-scrollbar class="scroll">
             <el-form
@@ -200,7 +200,7 @@
             </el-form>
           </el-scrollbar>
         </div>
-        <div slot="footer" class="dialog-footer">
+        <div name="footer" class="dialog-footer">
           <el-button @click="handleHide">关 闭</el-button>
         </div>
       </el-dialog>

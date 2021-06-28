@@ -10,7 +10,9 @@
               class="input-with-select"
               style="color: #97c1ff"
             >
-              <el-button slot="append" icon="el-icon-search" @click="_searchOffice" />
+              <template #append>
+                <el-button icon="el-icon-search" @click="_searchOffice"></el-button>
+              </template>
             </el-input>
           </div>
           <div class="title">{{ officeListTitle }}</div>
@@ -103,7 +105,7 @@
       >
         <component
           :is="item.className"
-          :navigat-list.sync="navigatList"
+          v-model:navigat-list="navigatList"
           :home-type="'emergency'"
           @filterHiddenLevel="filterHiddenLevel"
           @filterOfficeLevel="filterOfficeLevel"
@@ -134,14 +136,14 @@
       v-if="dialogVisible"
       class="dark unitArchives"
       :destroy-on-close="true"
-      :visible.sync="dialogVisible"
+      v-model:visible="dialogVisible"
       width="1240px"
     >
-      <div slot="title" class="dialog-title">单位档案</div>
+      <div name="title" class="dialog-title">单位档案</div>
       <div class="dialog-content">
         <unit-archives :office-id="viewOfficeId" />
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="hide()">关闭</el-button>
       </div>
     </el-dialog>
@@ -184,7 +186,7 @@ export default {
     Iot,
     UnitArchives
   },
-  data() {
+  data () {
     return {
       refreseChart: false,
       showSelectItem: false,
@@ -290,7 +292,7 @@ export default {
     }
   },
   computed: {
-    officeTypeChartData() {
+    officeTypeChartData () {
       const name = []
       const data = []
       const totalList = []
@@ -330,7 +332,7 @@ export default {
       }
       return chartData
     },
-    pieData() {
+    pieData () {
       const data = []
       if (this.areaList.length > 0) {
         this.areaList.forEach(item => {
@@ -365,16 +367,16 @@ export default {
       return pieData
     }
   },
-  created() {
+  created () {
     this.initDom(this.list)
   },
   methods: {
     // 点击元素
-    handlerClickSelectBox() {
+    handlerClickSelectBox () {
       this.showSelectItem = !this.showSelectItem
     },
     // 订阅逻辑
-    handlerClick(item) {
+    handlerClick (item) {
       if (this.list.length < 5 && item.isSelect) {
         this.$message({
           message: '至少保留五个模块',
@@ -414,7 +416,7 @@ export default {
       this.selectList[index].isSelect = selectStatus
     },
     // 初始化Grid布局
-    initDom(list) {
+    initDom (list) {
       this.mainClass = 'main-9'
       let classNameList = nameList.slice()
       if (list.length === 8) {
@@ -437,19 +439,19 @@ export default {
       this.refreseChart = !this.refreseChart
     },
     // 显示地图左侧单位列表
-    showOfficeList() {
+    showOfficeList () {
       if (!this.isShowOfficeList) {
         this.isShowOfficeList = true
       }
     },
     // 隐藏地图左侧单位列表
-    hideOfficeList() {
+    hideOfficeList () {
       if (this.isShowOfficeList) {
         this.isShowOfficeList = false
       }
     },
     // 地图所属单位
-    belongUnits(data) {
+    belongUnits (data) {
       const areaId = data.area.id
       getOfficeList({ areaId }).then((res) => {
         if (res.data && res.data.allData) {
@@ -458,7 +460,7 @@ export default {
       })
     },
     // 单位分级筛选（重点单位|一般单位|...）
-    levelSearch(data) {
+    levelSearch (data) {
       if (this.isShowRightBox) {
         this.isShowRightBox = false
       }
@@ -469,7 +471,7 @@ export default {
       this.hideOfficeList()
     },
     // 高层建筑分级统计-建筑列表查询
-    buildingLevelSearch(data) {
+    buildingLevelSearch (data) {
       this.officeListTitle = data.name
       this.navigatList = []
       this.navigatList.push(
@@ -493,7 +495,7 @@ export default {
       })
     },
     // 单位类别筛选（网吧|酒店|...）
-    filterOffice(data) {
+    filterOffice (data) {
       this.officeList = this.officeList.filter(item => {
         return item.categoryId === data.categoryId
       })
@@ -509,13 +511,13 @@ export default {
       })
       this.showOfficeList() // 是否显示单位列表
     },
-    areaFilterList(data) {
+    areaFilterList (data) {
       this.officeListTitle = data.title
       this.showOfficeList() // 是否显示单位列表
       this.officeList = data.officeList
     },
     // 按单位名称查询
-    _searchOffice() {
+    _searchOffice () {
       searchOffice({ name: this.searchOfficeName }).then(res => {
         if (res.data) {
           this.officeList = res.data.list
@@ -526,7 +528,7 @@ export default {
       })
     },
     // 获取区域、区域单位类型
-    getAreaOfficeType(data) {
+    getAreaOfficeType (data) {
       getPerformanceareacount({
         type: data.name
       }).then(res => {
@@ -545,7 +547,7 @@ export default {
       })
     },
     // 按区域筛选单位类型
-    filterAreaTypeList(data) {
+    filterAreaTypeList (data) {
       const index1 = this.navigatList.findIndex(item => {
         return item.level === 5
       })
@@ -578,7 +580,7 @@ export default {
       this.showOfficeList() // 是否显示单位列表
     },
     // 按单位级别筛选单位（A，AA...）
-    filterOfficeLevel(data) {
+    filterOfficeLevel (data) {
       this.officeList = data.areaOfficeList
       this.areaOfficeList = data.areaOfficeList
       this.areaList = data.areaList
@@ -589,7 +591,7 @@ export default {
       this.isShowHiddenType = false
     },
     // 按单位类型筛选单位
-    filterOfficeType(data) {
+    filterOfficeType (data) {
       const index1 = this.navigatList.findIndex(item => {
         return item.level === 5
       })
@@ -618,7 +620,7 @@ export default {
       })
     },
     // 按隐患级别筛选
-    filterHiddenLevel(data) {
+    filterHiddenLevel (data) {
       getDangerTypeList(data).then(res => {
         this.officeList = res.data.info
         this.dangerTypeList = res.data.dangerTypeList
@@ -629,22 +631,22 @@ export default {
       })
     },
     // 按隐患类型筛选
-    filterHiddenType(data) {
+    filterHiddenType (data) {
       this.hiddenTypeValue = data
     },
     // 打开单位详情页面
-    viewUnitArchives(data) {
+    viewUnitArchives (data) {
       this.viewDevOfficeId = data.id
       this.dialogVisible = true
     },
-    hide() {
+    hide () {
       this.dialogVisible = false
     },
-    closeRightBox() {
+    closeRightBox () {
       this.isShowRightBox = false
     },
     // 点击单位在地图上定位该单位
-    officePosition(data) {
+    officePosition (data) {
       const point = [data.longitude, data.latitude]
       this.$refs.map.setCenter(point)
       const index = this.navigatList.findIndex(item => {

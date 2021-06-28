@@ -5,7 +5,7 @@
       :datasource="organizationChartData"
       @node-click="handlerOrganizationNodeClick"
     >
-      <template slot-scope="{ nodeData }">
+      <template v-slot="{ nodeData }">
         <el-popover
           popper-class="popover-content"
           placement="top-start"
@@ -14,7 +14,7 @@
           :disabled="nodeData.icon ? true : false"
           :content="'职责：' + ((nodeData.primaryDuty || nodeData.deputyDuty || nodeData.duty) || '')"
         >
-          <div slot="reference" class="node-container">
+          <div name="reference" class="node-container">
             <div v-if="nodeData.type" class="node-top">
               <div class="node-title">
                 <span v-if="nodeData.officeName === 1" style="padding-top: 1px;">消防安全责任人：</span>
@@ -148,7 +148,7 @@ export default {
       default: () => {}
     }
   },
-  data() {
+  data () {
     return {
       disabled: true,
       popoverStatus: false,
@@ -161,7 +161,7 @@ export default {
     }
   },
   computed: {
-    organizationChartData() {
+    organizationChartData () {
       var childList = []
       if (this.nodeStatus) {
         childList = this.OrgData.deptList[0].children.slice(0, 3)
@@ -199,7 +199,7 @@ export default {
       return organizationChartData
     }
   },
-  created() {
+  created () {
     this.primaryJob = this.OrgData.primaryJob || ''
     this.primaryName = this.OrgData.primaryName || ''
     this.primaryDuty = this.OrgData.primaryDuty || ''
@@ -208,23 +208,23 @@ export default {
     this.deputyDuty = this.OrgData.deputyDuty || ''
   },
   methods: {
-    handlerOrganizationNodeClick(nodeData) {
+    handlerOrganizationNodeClick (nodeData) {
       this.$emit('handlerOrganizationNodeClick', nodeData)
     },
-    handlerLinkOrgView() {
+    handlerLinkOrgView () {
       this.$emit('handlerLinkOrgView')
     },
-    handlerPlusNodeOrg(nodeData) {
+    handlerPlusNodeOrg (nodeData) {
       this.$emit('handlerPlusNodeOrg', nodeData)
     },
-    handlerMinusNodeOrg(nodeData) {
+    handlerMinusNodeOrg (nodeData) {
       this.$emit('handlerMinusNodeOrg', nodeData)
     },
-    handlerEdit() {
+    handlerEdit () {
       this.disabled = false
       this.popoverStatus = true
     },
-    handlerSave() {
+    handlerSave () {
       this.disabled = true
       this.popoverStatus = false
     }

@@ -105,7 +105,7 @@
           </el-form>
         </div>
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="innerVisible = false">关 闭</el-button>
       </div>
     </el-dialog>

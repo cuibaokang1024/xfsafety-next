@@ -15,17 +15,17 @@ export default {
   components: {
     OrganizationChart
   },
-  data() {
+  data () {
     return {
       saveStatus: false,
       OrgData: {}
     }
   },
-  created() {
+  created () {
     this._handlerOfficeOrg()
   },
   methods: {
-    _handlerOfficeOrg() {
+    _handlerOfficeOrg () {
       handlerOfficeOrg().then(res => {
         this.OrgData = res.data
       })

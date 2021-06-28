@@ -116,11 +116,11 @@
       :visible.sync="dialogVisible"
       width="1240px"
     >
-      <div slot="title" class="dialog-title">单位档案</div>
+      <div name="title" class="dialog-title">单位档案</div>
       <div class="dialog-content">
         <unit-archives :office-id="viewOfficeId" />
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="hide()">关闭</el-button>
       </div>
     </el-dialog>

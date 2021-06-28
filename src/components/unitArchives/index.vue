@@ -134,7 +134,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -223,7 +223,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -249,7 +249,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -275,7 +275,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -301,7 +301,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -415,7 +415,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -470,7 +470,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -496,7 +496,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -522,7 +522,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -548,7 +548,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -588,7 +588,7 @@
                       align="center"
                       class-name="small-padding fixed-width"
                     >
-                      <template slot-scope="{row}">
+                      <template v-slot="{row}">
                         <el-button
                           size="mini"
                           type="primary"
@@ -627,7 +627,7 @@
                         align="center"
                         class-name="small-padding fixed-width"
                       >
-                        <template slot-scope="{row}">
+                        <template v-slot="{row}">
                           <el-button
                             size="mini"
                             type="primary"
@@ -701,7 +701,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -730,7 +730,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -756,7 +756,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -785,7 +785,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -822,7 +822,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -877,7 +877,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -903,7 +903,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -929,7 +929,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -955,7 +955,7 @@
                           align="center"
                           class-name="small-padding fixed-width"
                         >
-                          <template slot-scope="{row}">
+                          <template v-slot="{row}">
                             <el-button
                               size="mini"
                               type="primary"
@@ -985,11 +985,11 @@
       v-if="fireDialogVisible"
       class="dark fireFacilities"
       :destroy-on-close="true"
-      :visible.sync="fireDialogVisible"
+      v-model:visible="fireDialogVisible"
       append-to-body
       width="797px"
     >
-      <div slot="title" class="dialog-title">{{ facilitieTitle }}</div>
+      <div name="title" class="dialog-title">{{ facilitieTitle }}</div>
       <div class="dialog-content" style="padding: 0;">
         <base-table
           class="table-wrapper"
@@ -999,7 +999,7 @@
           :table-data="fireFacilitiesData"
         />
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="fireFacilitiesHide()">关 闭</el-button>
       </div>
     </el-dialog>
@@ -1009,11 +1009,11 @@
       v-if="devDialogVisible"
       class="dark unitDevDetail-wrapper"
       :destroy-on-close="true"
-      :visible.sync="devDialogVisible"
+      v-model:visible="devDialogVisible"
       append-to-body
       width="1161px"
     >
-      <div slot="title" class="dialog-title">安装设备</div>
+      <div name="title" class="dialog-title">安装设备</div>
       <div class="dialog-content">
         <unit-dev-detail
           :office-id="officeId"
@@ -1022,7 +1022,7 @@
           :is-show-base-info="false"
         />
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="devDetailhide()">关 闭</el-button>
       </div>
     </el-dialog>
@@ -1079,7 +1079,7 @@ export default {
       default: 0
     }
   },
-  data() {
+  data () {
     return {
       devDialogVisible: false,
       fireDialogVisible: false,
@@ -2310,7 +2310,7 @@ export default {
     }
   },
   computed: {
-    assessMentPieData() {
+    assessMentPieData () {
       const pieChart = {
         unit: '分',
         tooltip: {
@@ -2335,7 +2335,7 @@ export default {
       }
       return pieChart
     },
-    fireFacilities() {
+    fireFacilities () {
       const fireFacilities = [
         {
           id: '001',
@@ -2365,19 +2365,19 @@ export default {
       return fireFacilities
     }
   },
-  created() {
+  created () {
     this._getOfficeDetail()
   },
   methods: {
-    viewDevDetail(item) {
+    viewDevDetail (item) {
       this.devDialogVisible = true
       this.category = item.id - 1
       this.categoryName = item.name
     },
-    devDetailhide() {
+    devDetailhide () {
       this.devDialogVisible = false
     },
-    move(direction) {
+    move (direction) {
       this.$nextTick(() => {
         if (direction === 'right') {
           if (this.leftTabLength > 0) {
@@ -2386,7 +2386,7 @@ export default {
             this.$refs.baseInfoTab.style.transform = `translate3d(-${118 *
               this.leftTabLength}px,0,0)`
           } else {
-            return
+
           }
         } else if (direction === 'left') {
           if (this.rightTabLength > 0) {
@@ -2395,21 +2395,21 @@ export default {
             this.$refs.baseInfoTab.style.transform = `translate3d(-${118 *
               this.leftTabLength}px,0,0)`
           } else {
-            return
+
           }
         }
       })
     },
     // 查看表单信息
-    handleView(data, title, type) {
+    handleView (data, title, type) {
       // createFormOption(tyle)
       const operationStatus = 'view'
       this.formAction(title, operationStatus, data)
     },
-    fireFacilitiesHide() {
+    fireFacilitiesHide () {
       this.fireDialogVisible = false
     },
-    viewFireFacilitiesDetail(data) {
+    viewFireFacilitiesDetail (data) {
       this.fireDialogVisible = true
       this.facilitieTitle = data.name
       const params = {
@@ -2420,14 +2420,14 @@ export default {
         this.fireFacilitiesData = res.data
       })
     },
-    toggleVisible(visible) {
+    toggleVisible (visible) {
       if (this.visible === visible) {
         this.visible = ''
       } else {
         this.visible = visible
       }
     },
-    switchCheck(visible) {
+    switchCheck (visible) {
       this.checkVisible = visible
       const params = {
         officeId: this.officeId
@@ -2466,16 +2466,16 @@ export default {
           break
       }
     },
-    switchDualSystem(visible) {
+    switchDualSystem (visible) {
       this.dualSystemVisible = visible
     },
-    switchEmergency(visible) {
+    switchEmergency (visible) {
       this.emergencyVisible = visible
     },
-    switchSafeProduction(visible) {
+    switchSafeProduction (visible) {
       this.safeProductionVisible = visible
     },
-    switchBaseInfo(visible) {
+    switchBaseInfo (visible) {
       if (this.visible === 'baseInfo') {
         this.topVisible = visible
       }
@@ -2538,7 +2538,7 @@ export default {
           })
       }
     },
-    _getOfficeDetail() {
+    _getOfficeDetail () {
       const para = {
         officeId: this.officeId
       }
@@ -2553,7 +2553,7 @@ export default {
         }
       })
     },
-    handlerAssessMent() {
+    handlerAssessMent () {
       const para = {
         officeId: this.officeId
       }
@@ -2579,7 +2579,7 @@ export default {
       })
     },
     // 打开隐患详情
-    handlerViewDangerDetail(data) {
+    handlerViewDangerDetail (data) {
       this.$refs.HiddenDangerStatus.handlerShow()
       getDangerInfo({ danger_id: data.id }).then(res => {
         if (res.data) {
@@ -2588,12 +2588,12 @@ export default {
       })
     },
     // staffworkalert
-    handleCheckTraceView(data) {
+    handleCheckTraceView (data) {
       this.alertData = data
       this.$refs.staffworkalert.handlerShow()
     },
     // 文档下载
-    handlerDownloadFile(row) {
+    handlerDownloadFile (row) {
       const params = {
         officeId: this.officeId,
         fileId: row.fileId

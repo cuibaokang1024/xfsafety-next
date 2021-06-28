@@ -16,7 +16,7 @@
       append-to-body
       width="860px"
     >
-      <div slot="title" class="dialog-title">设备注册列表</div>
+      <div name="title" class="dialog-title">设备注册列表</div>
       <div class="dialog-content">
         <div class="code-content">
           <!-- 搜索框 -->
@@ -69,7 +69,7 @@
           <!-- 列表框 -->
         </div>
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="handlerHide()">关 闭</el-button>
         <el-button type="primary" @click="handlerSubmit()">确 定</el-button>
       </div>

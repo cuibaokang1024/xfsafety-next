@@ -6,7 +6,7 @@
     append-to-body
     width="1000px"
   >
-    <div slot="title" class="dialog-title">查阅</div>
+    <div name="title" class="dialog-title">查阅</div>
     <div class="dialog-content">
       <el-scrollbar>
         <el-main>
@@ -66,7 +66,7 @@
         </el-main>
       </el-scrollbar>
     </div>
-    <div slot="footer" class="dialog-footer">
+    <div name="footer" class="dialog-footer">
       <el-button @click="dialogVisible = false">关 闭</el-button>
     </div>
   </el-dialog>

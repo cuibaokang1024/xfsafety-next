@@ -289,7 +289,7 @@
             <!-- 制度列表 -->
           </div>
         </div>
-        <span slot="footer" class="dialog-footer">
+        <span name="footer" class="dialog-footer">
           <el-button @click="dialogVisible = false">关闭</el-button>
         </span>
       </el-dialog>

@@ -21,7 +21,7 @@ export default {
       default: () => {}
     }
   },
-  data() {
+  data () {
     return {
       playerOptions: {
         playbackRates: false, // 播放速度
@@ -51,21 +51,21 @@ export default {
     }
   },
   computed: {
-    player() {
+    player () {
       return this.$refs.videoPlayer.player
     }
   },
   methods: {
-    onPlayerPlay(player) {
+    onPlayerPlay (player) {
       console.log('player play!', player)
     },
-    onPlayerPause(player) {
+    onPlayerPause (player) {
       console.log('player pause!', player)
     },
-    onPlayerEnded(player) {
+    onPlayerEnded (player) {
       console.log('player ended!', player)
     },
-    handlerVideoPause() {
+    handlerVideoPause () {
       const myPlayer = this.$refs.videoPlayer.player
       myPlayer.pause()
     }

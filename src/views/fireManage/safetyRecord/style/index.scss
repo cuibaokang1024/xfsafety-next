@@ -1,0 +1,394 @@
+.safetyRecord {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: #001647;
+
+  .safetyRecord-left {
+    width: 260px;
+    padding: 15px;
+    margin-right: 20px;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.07);
+
+    .el-tabs {
+      .el-tabs__header {
+        .el-tabs__nav-wrap {
+          .el-tabs__nav-scroll {
+            .el-tabs__nav {
+              position: relative;
+              width: 100%;
+              height: 40px;
+
+              .el-tabs__active-bar {
+                display: none;
+              }
+
+              #tab-division {
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 400%);
+                left: 0;
+              }
+
+              #tab-directly {
+                padding-left: 20px;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 23% 0%);
+                right: 0;
+              }
+
+              .el-tabs__item {
+                position: absolute;
+                top: 0;
+                width: 57%;
+                padding: 0;
+                text-align: center;
+                color: #97c1ff;
+                background: #2750ad;
+
+                &.is-active {
+                  color: #f2f6ff;
+                  background: #2c66e6;
+                }
+              }
+            }
+          }
+        }
+
+        .el-tabs__nav-wrap::after {
+          display: none;
+        }
+      }
+
+      .el-tabs__content {}
+    }
+  }
+
+  .safetyRecord-right {
+    width: calc(100% - 280px);
+    height: 100%;
+
+    /* 查询框 */
+    .search-box {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    /* 查询框 */
+    /* 条件框 */
+    .filter-box {
+      width: 100%;
+      height: 28px;
+      margin-bottom: 15px;
+
+      .el-button {
+        height: 28px;
+        padding: 0 21px;
+        color: #fff;
+        text-align: center;
+        line-height: 28px;
+
+        &.add {
+          border: 1px solid #409eff;
+          background-color: #409eff;
+        }
+
+        &.add-ment {
+          border: 1px solid #409eff;
+          background-color: #409eff;
+        }
+
+        &.add-user {
+          border: 1px solid #00a0e9;
+          background-color: #00a0e9;
+        }
+
+        &.edit {
+          border: 1px solid #67c23a;
+          background-color: #67c23a;
+        }
+
+        &.delect {
+          border: 1px solid #dd6060;
+          background-color: #dd6060;
+        }
+
+        &.user {
+          border: 1px solid #e6a23c;
+          background-color: #e6a23c;
+        }
+
+        &.record {
+          border: 1px solid #0cc3b4;
+          background-color: #0cc3b4;
+        }
+
+        &.weichat {
+          border: 1px solid #a532c6;
+          background-color: #a532c6;
+        }
+
+        &.refresh {
+          border: 1px solid #ec9c14;
+          background-color: #ec9c14;
+        }
+      }
+    }
+
+    /* 条件框 */
+    /* 列表框 */
+    .table-box {
+      width: 100%;
+      height: calc(100% - 137px);
+      margin-bottom: 10px;
+
+      .el-button--info {
+        border: 1px solid #0cc3b4;
+        background-color: #0cc3b4;
+      }
+
+      .el-button--build {
+        color: #fff;
+        border: 1px solid #a532c6;
+        background-color: #a532c6;
+      }
+
+      .el-table {
+        color: #97c1ff;
+
+        .el-table__header {
+          th {
+            color: #97c1ff;
+            border-bottom: 1px solid #1c335f;
+            background: #1c335f;
+          }
+        }
+
+        .el-table__row,
+        .hover-row {
+          background: #001647;
+
+          td {
+            border-bottom: 1px solid #1c335f;
+            background: #001647;
+          }
+        }
+
+        .is-checked {
+          .el-checkbox__inner {
+            background-color: #1890ff;
+            border-color: #1890ff;
+          }
+        }
+
+        .is-indeterminate {
+          .el-checkbox__inner {
+            background-color: #1890ff;
+            border-color: #1890ff;
+          }
+        }
+
+        .el-checkbox__inner {
+          width: 19px;
+          height: 19px;
+          border: 1px solid #3682c8;
+          background: transparent;
+        }
+
+        .el-checkbox__inner::before {
+          height: 4px;
+          top: 7px;
+        }
+
+        .el-checkbox__inner::after {
+          height: 10px;
+          left: 7px;
+          top: 2px;
+        }
+
+        /* 标题 */
+        .el-table__header-wrapper {
+          th {
+            color: #97c1ff;
+            border-bottom: 1px solid #1c335f;
+            background: #1c335f;
+          }
+        }
+
+        /* 内容 */
+        .el-table__body-wrapper {
+          tr {
+            background: #001647;
+          }
+
+          /* hover高亮 */
+          tr:hover>td {
+            background: #001647;
+          }
+
+          td {
+            border-bottom: 1px solid #1c335f;
+          }
+        }
+      }
+
+      .el-table::before {
+        background-color: #1c335f;
+      }
+
+      .el-table__fixed::before {
+        background-color: #1c335f;
+      }
+    }
+
+    .pagination-box {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    /* 列表框 */
+  }
+
+  /* 一企一档 */
+  &.enterpriseRecord {
+    display: flex;
+
+    .import-form {
+      .el-form-item {
+        display: flex;
+      }
+
+      .el-select {
+        width: 100%;
+      }
+
+      .import-title {
+        display: flex;
+        width: 672px;
+        margin: 0 auto;
+
+        p {
+          color: #97c1ff;
+        }
+
+        span {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  /* 一企一档 */
+
+  /* 一楼一档 */
+  &.buildingRecord {
+    display: flex;
+  }
+
+  /* 一楼一档 */
+
+  /* 一人一档 */
+  &.personRecord {
+    display: flex;
+
+    .safetyRecord-right {
+      flex: 1;
+    }
+
+    .person-dialog {
+      .person-form {
+        padding: 10px 10px 10px 0px !important;
+
+        .el-form-item {
+          display: flex;
+        }
+
+        .el-select {
+          width: 100%;
+        }
+      }
+
+      .dialog-content {
+        height: 520px;
+
+        >.el-scrollbar {
+          height: 100%;
+
+          .el-scrollbar__wrap {
+            overflow-x: hidden;
+            overflow-y: scroll;
+          }
+
+          .el-scrollbar__bar {
+            &.is-vertical {
+              width: 4px; // 滚动条宽度
+            }
+          }
+
+          .el-scrollbar__thumb {
+            background-color: #4c79eb; // 可设置滚动条颜色
+          }
+        }
+      }
+    }
+  }
+
+  /* 一人一档 */
+
+  /* 查看人员 */
+  &.userPerson {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  /* 查看人员 */
+  /* 住宅管理 */
+
+  &.residenceRecord {
+    display: flex;
+
+    .residence-dialog {
+      .residence-form {
+        .el-form-item {
+          display: flex;
+        }
+
+        .el-select {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  /* 住宅管理 */
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 0px;
+    border-radius: 4px;
+    background-color: #c0c0c0;
+  }
+
+  /*定义滚动条轨道 内阴影+圆角*/
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #21345f;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #4c79eb;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #287bbb;
+  }
+}

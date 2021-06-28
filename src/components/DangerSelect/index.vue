@@ -26,7 +26,7 @@
       append-to-body
       width="860px"
     >
-      <div slot="title" class="dialog-title">危化品列表</div>
+      <div name="title" class="dialog-title">危化品列表</div>
       <div class="dialog-content">
         <div class="danger-content">
           <!-- 列表框 -->
@@ -42,7 +42,7 @@
           <!-- 列表框 -->
         </div>
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="handleHide()">关 闭</el-button>
         <el-button type="primary" @click="handleSubmit()">确 定</el-button>
       </div>

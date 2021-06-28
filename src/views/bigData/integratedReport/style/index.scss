@@ -1,0 +1,247 @@
+.report-main {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: #001647;
+
+  .report-box {
+    width: 100%;
+    margin-bottom: 15px;
+
+    .report-select {
+      .el-input__inner {
+        height: 32px;
+        line-height: 32px;
+        color: #97c1ff;
+        border: none;
+        background-color: hsla(0, 0%, 100%, .2);
+      }
+    }
+
+    .el-range-editor {
+      .el-range-input {
+        color: #97c1ff !important;
+        background: transparent;
+      }
+    }
+  }
+
+  .report-chart {
+    width: 100%;
+    height: 360px;
+    margin-bottom: 20px;
+  }
+
+  .report-table {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+
+    .pointer {
+      cursor: pointer;
+    }
+
+    .el-table {
+      color: #97c1ff;
+      border: 1px solid #1c335f;
+
+      .el-table__header-wrapper {
+        border-radius: 0px;
+
+        .el-table__header {
+          th {
+            color: #97c1ff;
+            border-bottom: 1px solid #1c335f;
+            background: #1c335f;
+          }
+        }
+      }
+
+      .el-table__row,
+      .hover-row {
+        background: #001647;
+
+        td {
+          border-bottom: 1px solid #1c335f;
+          background: #001647;
+        }
+      }
+
+      .is-checked {
+        .el-checkbox__inner {
+          background-color: #1890ff;
+          border-color: #1890ff;
+        }
+      }
+
+      .is-indeterminate {
+        .el-checkbox__inner {
+          background-color: #1890ff;
+          border-color: #1890ff;
+        }
+      }
+
+      .el-checkbox__inner {
+        width: 19px;
+        height: 19px;
+        border: 1px solid #3682c8;
+        background: transparent;
+      }
+
+      .el-checkbox__inner::before {
+        height: 4px;
+        top: 7px;
+      }
+
+      .el-checkbox__inner::after {
+        height: 10px;
+        left: 7px;
+        top: 2px;
+      }
+
+      /* 标题 */
+      .el-table__header-wrapper {
+        th {
+          color: #97c1ff;
+          border-bottom: 1px solid #1c335f;
+          background: #1c335f;
+        }
+      }
+
+      /* 内容 */
+      .el-table__body-wrapper {
+        tr {
+          background: #001647;
+        }
+
+        /* hover高亮 */
+        tr:hover>td {
+          background: #001647;
+        }
+
+        td {
+          border-bottom: 1px solid #1c335f;
+        }
+      }
+    }
+
+    .el-table::before {
+      background-color: #1c335f;
+    }
+
+    .el-table__fixed::before {
+      background-color: #1c335f;
+    }
+  }
+
+  &.enterpriseAsse {
+    .enterpriseAsse-container {
+      width: 800px;
+      height: 100%;
+      margin: 0 auto;
+
+      .enterpriseAsse-title {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #97c1ff;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .enterpriseAsse-content {
+        height: 778px;
+
+        >.el-scrollbar {
+          height: 100%;
+
+          .el-scrollbar__wrap {
+            overflow-x: hidden;
+            overflow-y: scroll;
+          }
+
+          .el-scrollbar__bar {
+            &.is-vertical {
+              width: 4px; // 滚动条宽度
+            }
+          }
+
+          .el-scrollbar__thumb {
+            background-color: #4c79eb; // 可设置滚动条颜色
+          }
+        }
+      }
+
+      .list {
+        height: 100%;
+        margin-right: 10px;
+
+        .item {
+          width: 100%;
+          min-height: 162px;
+          margin-bottom: 16px;
+          border-radius: 10px;
+          overflow: hidden;
+
+          .item-header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            height: 36px;
+            background: #516281;
+
+            .title {
+              padding-left: 20px;
+
+              span {
+                color: #fff;
+                font-size: 14px;
+              }
+            }
+          }
+
+          .item-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            min-height: 125px;
+            padding: 10px 20px;
+            background: #172d59;
+
+            .item-top {
+              font-size: 14px;
+              color: #97c1ff;
+              line-height: 22px;
+            }
+
+            .item-bot {
+              display: flex;
+              height: 40px;
+              align-items: center;
+
+              span {
+                padding: 12px 18px;
+                font-size: 14px;
+                color: #fff;
+                border-radius: 8px;
+              }
+
+              span:nth-of-type(1) {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                background: #d55756;
+              }
+
+              span:nth-of-type(2) {
+                margin-left: 20px;
+                background: #e37b00;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

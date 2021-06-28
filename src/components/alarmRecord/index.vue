@@ -7,7 +7,7 @@
       :visible.sync="dialogVisible"
       width="800px"
     >
-      <div slot="title" class="dialog-title">报警记录</div>
+      <div name="title" class="dialog-title">报警记录</div>
       <div ref="content" class="dialog-content">
         <el-header>
           <span>{{ `单位：${unitName||officeName}` }}</span>
@@ -63,7 +63,7 @@
           @pagination="getList"
         />
       </div>
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button type="primary" @click="hide()">关 闭</el-button>
       </div>
     </el-dialog>

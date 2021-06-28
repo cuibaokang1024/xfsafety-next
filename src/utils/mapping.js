@@ -1,7 +1,6 @@
-import Layout from '@/views/layout'
-console.log(Layout)
+import Layout from '@/layout'
 const map = {
-  layout: Layout,
+  layout: Layout
   // menuManage: () => import('@/views/systemSetup/menuManagement'), // 系统设置 - 菜单管理
   // dangerType: () => import('@/views/systemSetup/dangerType'), // 系统设置 - 危化品类型
   // emergencyCommand: () => import('@/views/emergencyRescue/emergencyCommand'), // 应急救援一张图
@@ -63,11 +62,11 @@ const map = {
   // dangerMethod: () => import('@/views/fireManage/dangerManage/dangerMethod'), // 消防管理 - 危化品管理 - 危化品处置方法
   // dangerWarehouse: () => import('@/views/fireManage/dangerManage/dangerWarehouse'), // 消防管理 - 危化品管理 - 危化品出入库管理
   // devCarnumSettings: () => import('@/views/fireManage/devCarnumSettings'), // 消防管理 - 车牌号管理
-  unitRecord: () => import('@/views/fireManage/unitRecord'), // 消防管理 - 单位档案
+  // unitRecord: () => import('@/views/fireManage/unitRecord'), // 消防管理 - 单位档案
   // // supervisionUnitRecord: () => import('@/views/fireManage/unitFiles'),
   // supervisionUnitRecord: () => import('@/views/fireManage/unitRecord/supervisionUnitRecord'), // 消防管理 - 单位档案 - 监管单位档案
   // supervisionUnitMent: () => import('@/views/fireManage/unitRecord/supervisionUnitMent'), // 消防管理 - 单位档案 - 监管单位部门
-  fireLegal: () => import('@/views/fireManage/unitRecord/fireLegal') // 消防管理 - 单位档案 - 消防合法文书
+  // fireLegal: () => import('@/views/fireManage/unitRecord/fireLegal'), // 消防管理 - 单位档案 - 消防合法文书
   // fireTraining: () => import('@/views/fireManage/unitRecord/fireTraining'), // 消防管理 - 单位档案 - 消防培训档案
   // firePlan: () => import('@/views/fireManage/unitRecord/firePlan'), // 消防管理 - 单位档案 - 消防预案和演练
   // fireRule: () => import('@/views/fireManage/unitRecord/fireRule'), // 消防管理 - 单位档案 - 规章制度
@@ -80,6 +79,7 @@ const map = {
   // choiceBank: () => import('@/views/fireManage/fireTrain/choiceBank'), // 消防管理 - 单位档案 - 单选题库
   // manyBank: () => import('@/views/fireManage/fireTrain/manyBank'), // 消防管理 - 单位档案 - 多选题库
   // judgeBank: () => import('@/views/fireManage/fireTrain/judgeBank'), // 消防管理 - 单位档案 - 判断题库
+  // training: () => import('@/views/fireManage/fireTrain/training'), // 消防管理 - 单位档案 - 判断题库
   // enterpriseUnitRecord: () => import('@/views/fireManage/unitRecord/enterpriseUnitRecord'), // 消防管理 - 单位档案 - 基本信息
   // departmentPersonnel: () => import('@/views/fireManage/unitRecord/departmentPersonnel'), // 消防管理 - 单位档案 - 部门及人员
   // buildingArea: () => import('@/views/fireManage/unitRecord/buildingArea'), // 消防管理 - 单位档案 - 建筑/区域管理
@@ -97,7 +97,7 @@ const map = {
   // buildingRecord: () => import('@/views/fireManage/safetyRecord/buildingRecord'), // 消防管理 - 安全档案管理 - 一楼一档
   // personRecord: () => import('@/views/fireManage/safetyRecord/personRecord'), // 消防管理 - 安全档案管理 - 一人一档
   // userPerson: () => import('@/views/fireManage/safetyRecord/userPerson'), // 消防管理 - 安全档案管理 - 人员
-  // residenceRecord: () => import('@/views/fireManage/safetyRecord/residenceRecord') // 消防管理 - 安全档案管理 - 住宅管理
+  // residenceRecord: () => import('@/views/fireManage/safetyRecord/residenceRecord'), // 消防管理 - 安全档案管理 - 住宅管理
   // dangerInvestigation: () => import('@/views/dangerInvestigation'), // 隐患排查
   // checkListDefine: () => import('@/views/dangerInvestigation/checkListDefine'), // 隐患排查 - 检查表定义
   // dangerQuery: () => import('@/views/dangerInvestigation/dangerQuery'), // 隐患排查 - 隐患查询

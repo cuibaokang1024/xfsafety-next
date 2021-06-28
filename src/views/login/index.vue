@@ -364,6 +364,7 @@ $light_gray:#eee;
     vertical-align: middle;
     display: inline-block;
     font-size: 18px;
+    padding: 0 10px;
   }
   .title-container {
     position: relative;

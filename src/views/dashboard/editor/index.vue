@@ -36,7 +36,7 @@ export default {
     ElectricSmokeTesting,
     GasInfotxTesting
   },
-  data() {
+  data () {
     return {
       itemList: [
         {

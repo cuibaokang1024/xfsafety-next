@@ -1,10 +1,10 @@
 <template>
   <div class="dark">
-    <el-dialog title="查看平面图" :visible.sync="dialogVisible" width="1200px">
+    <el-dialog title="查看平面图" v-model:visible="dialogVisible" width="1200px">
       <div class="dialog-content">
         <div class="bg" />
       </div>
-      <span slot="footer" class="dialog-footer">
+      <span name="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">关 闭</el-button>
       </span>
     </el-dialog>
@@ -13,16 +13,16 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       dialogVisible: false
     }
   },
   methods: {
-    handlerShow() {
+    handlerShow () {
       this.dialogVisible = true
     },
-    handlerHide() {
+    handlerHide () {
       this.dialogVisible = false
     }
   }

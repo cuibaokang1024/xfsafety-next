@@ -1,6 +1,6 @@
 <template>
   <div class="dialog-container">
-    <el-dialog class="dark" title="检查详情" :visible.sync="outerVisible" width="1350px">
+    <el-dialog class="dark" title="检查详情" v-model:visible="outerVisible" width="1350px">
       <div class="dialog-outer-content">
         <!-- 搜索框 -->
         <div class="search-box">
@@ -30,7 +30,7 @@
       <el-dialog
         class="dark"
         title="巡查点信息"
-        :visible.sync="innerVisible"
+        v-model:visible="innerVisible"
         width="800px"
         append-to-body
       >
@@ -69,7 +69,7 @@
               :border="false"
             >
               <el-table-column label="现场图片" align="left" class-name="small-padding fixed-width">
-                <template slot-scope="{row}">
+                <template v-slot="{row}">
                   <el-image
                     v-if="row.image"
                     style="min-width: 80px; min-height: 110px"
@@ -109,12 +109,12 @@
             </el-form>
           </div>
         </div>
-        <div slot="footer" class="dialog-footer">
+        <div name="footer" class="dialog-footer">
           <el-button @click="innerVisible = false">关 闭</el-button>
         </div>
       </el-dialog>
       <!-- 内部详情 -->
-      <div slot="footer" class="dialog-footer">
+      <div name="footer" class="dialog-footer">
         <el-button @click="outerVisible = false">关 闭</el-button>
       </div>
     </el-dialog>
@@ -124,7 +124,7 @@
 <script>
 import {
   handlerChkPlanPointDetail,
-  handlerChkPlanDictList,
+  // handlerChkPlanDictList,
   handlerChkPlanPointInfo
 } from '@/api/companyHome'
 import { getPartsList } from '@/api/partsList'
@@ -145,7 +145,7 @@ export default {
       default: () => {}
     }
   },
-  data() {
+  data () {
     return {
       listLoading: false,
       outerVisible: false,
@@ -208,7 +208,7 @@ export default {
   },
   computed: {
     // 楼层列表
-    floorList() {
+    floorList () {
       const selectedBuilding = this.BuildingList.filter(item => {
         return item.id === this.listQuery.partId
       })
@@ -220,7 +220,7 @@ export default {
     }
   },
   watch: {
-    alertData(newVal) {
+    alertData (newVal) {
       const data = Object.assign({}, newVal, {
         planId: 'b9f39dfb062646f58317790f080d25fb'
       })
@@ -230,14 +230,14 @@ export default {
     }
   },
   methods: {
-    handlerShow() {
+    handlerShow () {
       this.outerVisible = true
     },
-    handlerHide() {
+    handlerHide () {
       this.outerVisible = false
     },
     // 获取采集部位列表
-    _getPartsList() {
+    _getPartsList () {
       getPartsList().then(res => {
         if (res.data) {
           console.log(res.data)
@@ -245,12 +245,12 @@ export default {
         }
       })
     },
-    _handlerChkPlanPointDetail() {
+    _handlerChkPlanPointDetail () {
       handlerChkPlanPointDetail(this.listQuery).then(res => {
         this.traceData = res.data
       })
     },
-    _handlerChkPlanPointInfo(pointId) {
+    _handlerChkPlanPointInfo (pointId) {
       handlerChkPlanPointInfo(pointId).then(res => {
         this.mationData = res.data.pointDetail
         this.list = res.data.pointHistory
@@ -258,10 +258,10 @@ export default {
       })
     },
     // 查询函数
-    handleFilter(data) {
+    handleFilter (data) {
       this.listQuery = data
     },
-    handlerTraceDetailView(pointId) {
+    handlerTraceDetailView (pointId) {
       this._handlerChkPlanPointInfo(pointId)
       this.innerVisible = true
     }

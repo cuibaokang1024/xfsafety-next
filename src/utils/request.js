@@ -1,7 +1,8 @@
 import axios from 'axios'
-import { MessageBox, Message } from 'element-plus'
+import { MessageBox, ElMessage } from 'element-plus'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
+
 // 创建一个axios实例
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
@@ -49,27 +50,27 @@ service.interceptors.response.use(
         //   })
         //   break
         // case 403:
-        //   Message({
-        //     message: '拒绝访问',
+        //   ElMessage({
+        //     ElMessage: '拒绝访问',
         //     type: 'error'
         //   })
         //   break
         // case 280:
-        //   Message({
-        //     message: res.msg || 'error',
+        //   ElMessage({
+        //     ElMessage: res.msg || 'error',
         //     type: 'error'
         //   })
         //   break
         // case 500:
-        //   Message({
-        //     message: '服务器错误',
+        //   ElMessage({
+        //     ElMessage: '服务器错误',
         //     type: 'error'
         //   })
         //   break
         default:
           break
       }
-      Message({
+      ElMessage({
         message: res.msg,
         type: 'error'
       })
@@ -93,13 +94,13 @@ service.interceptors.response.use(
           })
           break
         case 403:
-          Message({
+          ElMessage({
             message: '拒绝访问',
             type: 'error'
           })
           break
         // case 500:
-        //   Message({
+        //  ElMessage({
         //     message: '服务器错误',
         //     type: 'error'
         //   })
